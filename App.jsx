@@ -1,7 +1,6 @@
 import logo from './IMG_4167.JPG'
 import oyatilloImage from './IMG_4405.jpeg'
-import nurislomImage from './IMG_9323.HEIC'
-
+import nurislomImage from './nurislom.jpg'
 export default function App() {
   const countries = [
     {
