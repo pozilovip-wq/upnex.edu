@@ -1,6 +1,6 @@
-import logo from './assets/upnex-logo.png'
-import oyatilloImage from './assets/oyatillo.jpg'
-import nurislomImage from './assets/nurislom.jpg'
+import logo from './IMG_4167.JPG'
+import oyatilloImage from './IMG_4405.jpeg'
+import nurislomImage from './IMG_9323.HEIC'
 
 export default function App() {
   const countries = [
