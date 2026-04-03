@@ -1,560 +1,375 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPNEX EDUCATION</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f5f7fb;
-      color: #111827;
-      line-height: 1.6;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 31, 77, 0.95);
-      backdrop-filter: blur(12px);
-      padding: 22px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 30px;
-      font-weight: 800;
-      color: white;
-      text-decoration: none;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #bfd7ff;
-    }
-
-    .btn {
-      background: white;
-      color: #081f4d;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 700;
-      display: inline-block;
-      transition: 0.3s;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    .hero {
-      min-height: 92vh;
-      background: linear-gradient(rgba(8,31,77,0.75), rgba(8,31,77,0.75)),
-      url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 80px 8%;
-    }
-
-    .hero-content {
-      max-width: 1000px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      margin-bottom: 24px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 76px;
-      line-height: 1.1;
-      margin-bottom: 25px;
-    }
-
-    .hero p {
-      font-size: 22px;
-      max-width: 850px;
-      margin: 0 auto 35px;
-      color: #e5e7eb;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    section {
-      padding: 100px 8%;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-header span {
-      color: #2563eb;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-
-    .section-header h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 52px;
-      margin-top: 15px;
-    }
-
-    .stats-grid,
-    .services-grid,
-    .universities-grid,
-    .testimonial-grid,
-    .contact-grid {
-      display: grid;
-      gap: 30px;
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .services-grid,
-    .universities-grid,
-    .testimonial-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    .card {
-      background: white;
-      border-radius: 28px;
-      padding: 35px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .stat-card h3 {
-      font-size: 42px;
-      color: #081f4d;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .service-icon {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3,
-    .university-card h3 {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p,
-    .university-card p,
-    .testimonial-card p {
-      color: #6b7280;
-    }
-
-    .university-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #e0ebff;
-      color: #1d4ed8;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 600;
-      margin-top: 12px;
-      margin-right: 10px;
-    }
-
-    .about {
-      background: #081f4d;
-      color: white;
-      border-radius: 40px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 50px;
-    }
-
-    .about-box {
-      background: rgba(255,255,255,0.08);
-      padding: 25px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .booking {
-      background: white;
-      border-radius: 40px;
-      padding: 60px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    .booking-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
-    }
-
-    .booking-option {
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 25px;
-    }
-
-    footer {
-      background: #061633;
-      color: white;
-      padding: 80px 8%;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 40px;
-    }
-
-    .footer-grid h4 {
-      margin-bottom: 18px;
-      font-size: 20px;
-    }
-
-    .footer-grid p,
-    .footer-grid a {
-      color: #cbd5e1;
-      text-decoration: none;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .section-header h2 {
-        font-size: 38px;
-      }
-
-      .booking {
-        padding: 40px 25px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <a href="#home" class="logo">UPNEX EDUCATION</a>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#universities">Universities</a>
-      <a href="#students">Success Stories</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a href="#booking" class="btn">Book Consultation</a>
-  </header>
-
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <div class="tag">Trusted by students across Uzbekistan</div>
-      <h1>START YOUR USA EDUCATION JOURNEY</h1>
-      <p>
-        Upnex helps students apply to universities, prepare for F-1 visas,
-        find scholarships, and begin their future in the United States.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#booking" class="btn">Book Free Consultation</a>
-        <a href="#universities" class="btn btn-outline">View Universities</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="stats-grid">
-      <div class="card stat-card">
-        <h3>500+</h3>
-        <p>Students Consulted</p>
-      </div>
-      <div class="card stat-card">
-        <h3>50+</h3>
-        <p>Partner Universities</p>
-      </div>
-      <div class="card stat-card">
-        <h3>95%</h3>
-        <p>Visa Preparation Success</p>
-      </div>
-      <div class="card stat-card">
-        <h3>USA • UK • Europe</h3>
-        <p>Study Destinations</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="section-header">
-      <span>Our Services</span>
-      <h2>Everything You Need To Study Abroad</h2>
-    </div>
-
-    <div class="services-grid">
-      <div class="card service-card">
-        <div class="service-icon">🎓</div>
-        <h3>University Admissions</h3>
-        <p>We help students choose universities, prepare applications, and submit documents correctly.</p>
-      </div>
-
-      <div class="card service-card">
-        <div class="service-icon">🛂</div>
-        <h3>F-1 Visa Preparation</h3>
-        <p>Mock interviews, DS-160 guidance, visa document review, and embassy preparation.</p>
-      </div>
-
-      <div class="card service-card">
-        <div class="service-icon">💰</div>
-        <h3>Scholarship Assistance</h3>
-        <p>Find affordable universities and scholarship opportunities that fit your budget.</p>
-      </div>
-
-      <div class="card service-card">
-        <div class="service-icon">📚</div>
-        <h3>English Exam Preparation</h3>
-        <p>IELTS, TOEFL, SAT, and Duolingo support for international students.</p>
-      </div>
-
-      <div class="card service-card">
-        <div class="service-icon">✈️</div>
-        <h3>Accommodation & Travel</h3>
-        <p>Dormitory support, flight guidance, and pre-departure preparation.</p>
-      </div>
-
-      <div class="card service-card">
-        <div class="service-icon">🏫</div>
-        <h3>Transfer & Community Colleges</h3>
-        <p>Affordable pathways into American universities through transfer options.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="universities">
-    <div class="section-header">
-      <span>Popular Universities</span>
-      <h2>Top University Options</h2>
-    </div>
-
-    <div class="universities-grid">
-      <div class="card university-card">
-        <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80" alt="Hartwick College">
-        <h3>Hartwick College</h3>
-        <p>Oneonta, New York</p>
-        <span class="badge">Scholarships Available</span>
-        <span class="badge">Affordable Tuition</span>
-      </div>
-
-      <div class="card university-card">
-        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80" alt="Pace University">
-        <h3>Pace University</h3>
-        <p>New York City</p>
-        <span class="badge">Merit Scholarships</span>
-        <span class="badge">NYC Location</span>
-      </div>
-
-      <div class="card university-card">
-        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80" alt="Michigan State University">
-        <h3>Michigan State University</h3>
-        <p>Michigan</p>
-        <span class="badge">Financial Aid</span>
-        <span class="badge">Top Ranked</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="about card">
-      <div class="section-header">
-        <span style="color:#93c5fd;">Why Students Choose Upnex</span>
-        <h2>Helping Uzbek Students Reach Global Opportunities</h2>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-box">Personalized university selection</div>
-        <div class="about-box">Honest visa guidance</div>
-        <div class="about-box">Strong interview preparation</div>
-        <div class="about-box">Support before and after arrival</div>
-        <div class="about-box">Local office in Andijon</div>
-        <div class="about-box">Scholarship-focused planning</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="students">
-    <div class="section-header">
-      <span>Student Success</span>
-      <h2>Real Stories From Our Students</h2>
-    </div>
-
-    <div class="testimonial-grid">
-      <div class="card testimonial-card">
-        <p>“UPNEX helped me get accepted and prepare for my visa interview. Now I study in New York.”</p>
-      </div>
-      <div class="card testimonial-card">
-        <p>“The consultation process was very professional and gave me confidence for my future.”</p>
-      </div>
-      <div class="card testimonial-card">
-        <p>“I found affordable universities and scholarship opportunities thanks to Upnex.”</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="booking">
-    <div class="booking">
-      <div class="section-header">
-        <span>Book A Consultation</span>
-        <h2>Start Your Journey Today</h2>
-      </div>
-
-      <p>Reserve a free consultation to discuss university options, scholarships, visa preparation, and your study abroad plan.</p>
-
-      <div class="booking-options">
-        <div class="booking-option">
-          <h3>Free Consultation</h3>
-          <p>30 Minutes</p>
+import logo from './assets/upnex-logo.png'
+import oyatilloImage from './assets/oyatillo.jpg'
+import nurislomImage from './assets/nurislom.jpg'
+
+export default function UpnexHomepage() {
+  const countries = [
+    {
+      name: 'USA',
+      description: 'Top universities, scholarships, and strong career opportunities.',
+      flag: '🇺🇸',
+    },
+    {
+      name: 'UK',
+      description: 'Shorter degree programs and prestigious universities.',
+      flag: '🇬🇧',
+    },
+    {
+      name: 'Canada',
+      description: 'Affordable tuition, safe cities, and work opportunities.',
+      flag: '🇨🇦',
+    },
+    {
+      name: 'Australia',
+      description: 'Modern education system and high quality of life.',
+      flag: '🇦🇺',
+    },
+  ]
+
+  const services = [
+    'University Admissions',
+    'Scholarship Assistance',
+    'Visa Preparation',
+    'DS-160 Help',
+    'Embassy Interview Practice',
+    'Accommodation Support',
+    'English Courses',
+    'Post-Arrival Support',
+  ]
+
+  const universities = [
+    {
+      name: 'Hartwick College',
+      location: 'Oneonta, New York',
+      tuition: '$25,000–$35,000 / year',
+      scholarship: 'Up to $32,000',
+      tag: 'Affordable',
+    },
+    {
+      name: 'Pace University',
+      location: 'New York City, New York',
+      tuition: '$48,000–$55,000 / year',
+      scholarship: 'Up to $30,000',
+      tag: 'NYC',
+    },
+    {
+      name: 'Monroe University',
+      location: 'Bronx, New York',
+      tuition: '$15,000–$25,000 / year',
+      scholarship: 'Up to $3,500 / semester',
+      tag: 'Fast Admissions',
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div>
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Upnex Logo"
+                className="h-14 w-14 rounded-2xl object-cover"
+              />
+              <div>
+                <h1 className="text-2xl font-bold tracking-wide">UPNEX</h1>
+                <p className="text-xs text-slate-400">You Are Going To Be Next</p>
+              </div>
+            </div>
+          </div>
+
+          <nav className="hidden items-center gap-8 text-sm text-slate-300 lg:flex">
+            <a href="#home" className="transition hover:text-white">Home</a>
+            <a href="#about" className="transition hover:text-white">About</a>
+            <a href="#services" className="transition hover:text-white">Services</a>
+            <a href="#universities" className="transition hover:text-white">Universities</a>
+            <a href="#success" className="transition hover:text-white">Success Stories</a>
+            <a href="#contact" className="transition hover:text-white">Contact</a>
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <button className="rounded-full border border-white/20 px-4 py-2 text-sm font-medium transition hover:border-white hover:bg-white hover:text-slate-950">
+              WhatsApp
+            </button>
+            <button className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold transition hover:bg-blue-500">
+              Free Consultation
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section id="home" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-700/30 via-slate-950 to-slate-950" />
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-2 lg:items-center">
+          <div className="relative z-10">
+            <div className="mb-6 inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
+              Trusted By Students In USA, UK, Canada & Australia
+            </div>
+
+            <h2 className="mb-6 text-5xl font-bold leading-tight lg:text-7xl">
+              We Are Upnex. <br />
+              <span className="text-blue-400">You Are Going To Be Next.</span>
+            </h2>
+
+            <p className="mb-8 max-w-2xl text-lg leading-8 text-slate-300">
+              Upnex helps students receive high scholarships in the USA, UK, Canada, and Australia. Many students can apply without IELTS or SAT and start their study abroad journey faster.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <button className="rounded-full bg-blue-600 px-7 py-4 text-sm font-semibold transition hover:bg-blue-500">
+                Book Free Consultation
+              </button>
+              <button className="rounded-full border border-white/20 px-7 py-4 text-sm font-semibold transition hover:border-white hover:bg-white hover:text-slate-950">
+                Explore Universities
+              </button>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                <h3 className="text-2xl font-bold">500+</h3>
+                <p className="mt-2 text-sm text-slate-400">Students Guided</p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                <h3 className="text-2xl font-bold">80-100%</h3>
+                <p className="mt-2 text-sm text-slate-400">Scholarship Opportunities</p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                <h3 className="text-2xl font-bold">4</h3>
+                <p className="mt-2 text-sm text-slate-400">Countries Covered</p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                <h3 className="text-2xl font-bold">NY + UZ</h3>
+                <p className="mt-2 text-sm text-slate-400">International Team</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-10">
+            <div className="rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl">
+              <div className="mb-6 flex items-center justify-between">
+                <span className="rounded-full bg-blue-500/20 px-4 py-2 text-sm text-blue-300">
+                  Premium Education Agency
+                </span>
+                <span className="text-4xl">🎓</span>
+              </div>
+
+              <div className="space-y-5">
+                <div className="rounded-2xl bg-slate-900/80 p-5">
+                  <p className="text-sm text-slate-400">Why Students Choose Upnex</p>
+                  <h3 className="mt-2 text-xl font-semibold">No Wasted Time</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
+                    Students do not need to wait 6 months for IELTS if universities can accept alternative documents.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-slate-900/80 p-5">
+                  <p className="text-sm text-slate-400">Our Promise</p>
+                  <h3 className="mt-2 text-xl font-semibold">Professional & Honest Guidance</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
+                    We do not guarantee visa approval. We guarantee strong preparation, smart strategy, and support from start to finish.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Countries</p>
+          <h2 className="text-4xl font-bold">Study In Top Countries</h2>
         </div>
 
-        <div class="booking-option">
-          <h3>USA University Consultation</h3>
-          <p>1 Hour</p>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {countries.map((country) => (
+            <div key={country.name} className="rounded-[28px] border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-blue-500/40 hover:bg-white/10">
+              <div className="mb-5 text-5xl">{country.flag}</div>
+              <h3 className="text-2xl font-semibold">{country.name}</h3>
+              <p className="mt-4 leading-7 text-slate-400">{country.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" className="bg-slate-900/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Services</p>
+            <h2 className="text-4xl font-bold">Everything Students Need</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {services.map((service) => (
+              <div key={service} className="rounded-[28px] border border-white/10 bg-slate-950/70 p-6 transition hover:border-blue-500/40 hover:bg-slate-900">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/20 text-xl text-blue-300">
+                  ✦
+                </div>
+                <h3 className="text-xl font-semibold">{service}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-400">
+                  Professional support from the Upnex team.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="universities" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Universities</p>
+            <h2 className="text-4xl font-bold">Popular University Options</h2>
+          </div>
+
+          <button className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-white hover:bg-white hover:text-slate-950">
+            View All Universities
+          </button>
         </div>
 
-        <div class="booking-option">
-          <h3>F-1 Visa Preparation</h3>
-          <p>1 Hour</p>
-        </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {universities.map((university) => (
+            <div key={university.name} className="rounded-[30px] border border-white/10 bg-white/5 p-7 transition hover:-translate-y-2 hover:border-blue-500/40 hover:bg-white/10">
+              <div className="mb-5 flex items-center justify-between">
+                <span className="rounded-full bg-blue-500/20 px-4 py-2 text-xs font-medium text-blue-300">
+                  {university.tag}
+                </span>
+                <span className="text-2xl">🏫</span>
+              </div>
 
-        <div class="booking-option">
-          <h3>Scholarship Consultation</h3>
-          <p>45 Minutes</p>
-        </div>
-      </div>
+              <h3 className="text-2xl font-bold">{university.name}</h3>
+              <p className="mt-2 text-slate-400">{university.location}</p>
 
-      <a href="#contact" class="btn">Contact Us Now</a>
+              <div className="mt-6 space-y-4 border-t border-white/10 pt-6 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Tuition</span>
+                  <span>{university.tuition}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Scholarship</span>
+                  <span>{university.scholarship}</span>
+                </div>
+              </div>
+
+              <button className="mt-8 w-full rounded-2xl bg-blue-600 py-3 font-semibold transition hover:bg-blue-500">
+                View Details
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="bg-slate-900/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Meet The Team</p>
+            <h2 className="text-4xl font-bold">The People Behind Upnex</h2>
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-400">
+              Upnex combines international experience from New York with local support in Uzbekistan.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="overflow-hidden rounded-[32px] border border-white/10 bg-slate-950/80">
+              <img
+                src={oyatilloImage}
+                alt="Oyatillo"
+                className="h-[500px] w-full object-cover"
+              />
+
+              <div className="p-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <div>
+                    <h3 className="text-3xl font-bold">Oyatillo</h3>
+                    <p className="mt-2 text-blue-400">USA-Based Consultant • New York</p>
+                  </div>
+                  <span className="rounded-full bg-blue-500/20 px-4 py-2 text-sm text-blue-300">
+                    International Team
+                  </span>
+                </div>
+
+                <p className="leading-8 text-slate-300">
+                  Oyatillo helps students with university selection, scholarship planning, New York guidance, and international support. He works directly with students who want to study in the USA and helps them understand the full process.
+                </p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-[32px] border border-white/10 bg-slate-950/80">
+              <img
+                src={nurislomImage}
+                alt="Nurislom"
+                className="h-[500px] w-full object-cover"
+              />
+
+              <div className="p-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <div>
+                    <h3 className="text-3xl font-bold">Nurislom</h3>
+                    <p className="mt-2 text-blue-400">Local Coordinator • Uzbekistan</p>
+                  </div>
+                  <span className="rounded-full bg-blue-500/20 px-4 py-2 text-sm text-blue-300">
+                    Office Team
+                  </span>
+                </div>
+
+                <p className="leading-8 text-slate-300">
+                  Nurislom manages applications, documents, consultations, and student communication in Uzbekistan. He helps students prepare everything correctly before the university and visa process begins.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="border-t border-white/10 bg-slate-900/80 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-blue-700/20 to-slate-900 p-10 lg:p-16">
+            <div className="grid gap-10 lg:grid-cols-2">
+              <div>
+                <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Contact Us</p>
+                <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+                  Your Future Starts With One Conversation
+                </h2>
+                <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+                  Book a free consultation with Upnex today and let us help you build your study abroad journey.
+                </p>
+              </div>
+
+              <div className="space-y-5 rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
+                <div>
+                  <p className="text-sm text-slate-400">Phone / WhatsApp</p>
+                  <p className="mt-1 text-xl font-semibold">+998 50 455 33 55</p>
+                </div>
+
+                <div>
+                  <p className="text-sm text-slate-400">Telegram</p>
+                  <p className="mt-1 text-xl font-semibold">@upnexuz</p>
+                </div>
+
+                <div>
+                  <p className="text-sm text-slate-400">Email</p>
+                  <p className="mt-1 text-xl font-semibold">pozilovip@gmail.com</p>
+                </div>
+
+                <div>
+                  <p className="text-sm text-slate-400">Office</p>
+                  <p className="mt-1 text-lg font-medium leading-7">
+                    Andijon shahar, Istiqbol ko‘chasi, 9-uy
+                    <br />
+                    (Bobur haykal stoyankasi)
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-sm text-slate-400">Working Hours</p>
+                  <p className="mt-1 text-lg font-medium">11:00 AM – 6:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-
-  <footer id="contact">
-    <div class="footer-grid">
-      <div>
-        <h4>UPNEX EDUCATION</h4>
-        <p>Helping students from Uzbekistan reach universities in the USA and beyond.</p>
-      </div>
-
-      <div>
-        <h4>Quick Links</h4>
-        <a href="#services">Services</a>
-        <a href="#universities">Universities</a>
-        <a href="#students">Success Stories</a>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <p>Andijon shahar, Istiqbol ko‘chasi, 9-uy</p>
-        <p>Instagram: @upnex.education</p>
-        <p>Telegram: @upnexeducation</p>
-        <p>WhatsApp: +998 XX XXX XX XX</p>
-      </div>
-
-      <div>
-        <h4>Consultation</h4>
-        <p>Book a free meeting and start your study abroad journey today.</p>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
-```
+  )
+}
