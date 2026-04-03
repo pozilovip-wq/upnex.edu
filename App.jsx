@@ -1,6 +1,6 @@
 import logo from './IMG_4167.JPG'
 import oyatilloImage from './IMG_4405.jpeg'
-import nurislomImage from './nurislom.jpg'
+
 export default function App() {
   const countries = [
     {
@@ -199,7 +199,7 @@ export default function App() {
           <h2 className="text-4xl font-bold">The People Behind Upnex</h2>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-1">
           <div className="overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
             <img src={oyatilloImage} alt="Oyatillo" className="h-[500px] w-full object-cover" />
             <div className="p-8">
@@ -207,17 +207,6 @@ export default function App() {
               <p className="mt-2 text-blue-400">USA-Based Consultant • New York</p>
               <p className="mt-5 leading-8 text-slate-300">
                 Oyatillo helps students with university selection, scholarship planning, and support for studying in the USA.
-              </p>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
-            <img src={nurislomImage} alt="Nurislom" className="h-[500px] w-full object-cover" />
-            <div className="p-8">
-              <h3 className="text-3xl font-bold">Nurislom</h3>
-              <p className="mt-2 text-blue-400">Local Coordinator • Uzbekistan</p>
-              <p className="mt-5 leading-8 text-slate-300">
-                Nurislom manages applications, consultations, student documents, and communication in Uzbekistan.
               </p>
             </div>
           </div>
@@ -257,36 +246,6 @@ export default function App() {
                 </button>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-blue-700/20 to-slate-900 p-10 lg:p-16">
-            <div className="grid gap-10 lg:grid-cols-2">
-              <div>
-                <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Contact Us</p>
-                <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
-                  Your Future Starts With One Conversation
-                </h2>
-                <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-                  Book a free consultation with Upnex today and let us help you build your study abroad journey.
-                </p>
-              </div>
-
-              <div className="space-y-5 rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
-                <p className="text-lg font-semibold">+998 50 455 33 55</p>
-                <p className="text-slate-300">Telegram: @upnexuz</p>
-                <p className="text-slate-300">Email: pozilovip@gmail.com</p>
-                <p className="text-slate-300">
-                  Andijon shahar, Istiqbol ko‘chasi, 9-uy
-                  <br />
-                  (Bobur haykal stoyankasi)
-                </p>
-                <p className="text-slate-300">Working Hours: 11:00 AM – 6:00 PM</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
