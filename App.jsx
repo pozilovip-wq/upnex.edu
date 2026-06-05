@@ -2,6 +2,8 @@ import { useState } from 'react'
 import logo from './IMG_4167.JPG'
 import oyatilloImage from './IMG_4405.jpeg'
 import nurislomImage from './IMG_5404.JPG'
+import UniversitiesSection from './UniversitiesSection.jsx'
+import universitiesData from './universities.js'
 
 const TELEGRAM = 'https://t.me/upnex_admin'
 
@@ -201,7 +203,6 @@ const universities = [
 
 export default function App() {
   const [selectedCountry, setSelectedCountry] = useState(null)
-  const [expandedUniversity, setExpandedUniversity] = useState(null)
 
   const country = selectedCountry ? countryDetails[selectedCountry] : null
 
@@ -497,55 +498,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* UNIVERSITIES */}
-      <section id="universities" className="bg-slate-900/60 py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Universities</p>
-            <h2 className="text-4xl font-bold">Popular University Options</h2>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {universities.map((university) => (
-              <div key={university.name} className="rounded-[30px] border border-white/10 bg-slate-950/70 p-7 transition hover:-translate-y-2 hover:border-blue-500/40">
-                <span className="rounded-full bg-blue-500/20 px-4 py-2 text-xs font-medium text-blue-300">{university.tag}</span>
-                <h3 className="mt-6 text-2xl font-bold">{university.name}</h3>
-                <p className="mt-2 text-slate-400">{university.location}</p>
-                <div className="mt-6 space-y-4 border-t border-white/10 pt-6 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Tuition</span>
-                    <span>{university.tuition}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Scholarship</span>
-                    <span>{university.scholarship}</span>
-                  </div>
-                </div>
-                {expandedUniversity === university.name && (
-                  <div className="mt-5 rounded-2xl bg-white/5 p-4 text-sm leading-7 text-slate-300">
-                    {university.details}
-                  </div>
-                )}
-                <div className="mt-6 flex gap-3">
-                  <button
-                    onClick={() => setExpandedUniversity(expandedUniversity === university.name ? null : university.name)}
-                    className="flex-1 rounded-2xl border border-white/20 py-3 text-sm font-semibold transition hover:border-blue-400 hover:text-blue-400"
-                  >
-                    {expandedUniversity === university.name ? 'Hide Info' : 'View Details'}
-                  </button>
-                  <a
-                    href={telegramLink(`Hello! I'm interested in applying to ${university.name}. Can you help me?`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 rounded-2xl bg-blue-600 py-3 text-center text-sm font-semibold transition hover:bg-blue-500"
-                  >
-                    Apply Now
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <UniversitiesSection universities={universitiesData} />
 
       {/* CONTACT */}
       <section id="contact" className="mx-auto max-w-7xl px-6 py-24">
