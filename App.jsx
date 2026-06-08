@@ -417,23 +417,97 @@ export default function App() {
         </div>
       </section>
 
+      {/* ABOUT UPNEX */}
+      <section className="bg-slate-900/40 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">About Us</p>
+            <h2 className="text-4xl font-bold">Why Upnex Is Different</h2>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3 mb-12">
+            <div className="rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
+              <div className="mb-4 text-4xl">🏆</div>
+              <h3 className="text-xl font-bold mb-3">The Only Agency in the Valley</h3>
+              <p className="text-slate-400 leading-7 text-sm">
+                Upnex is one of the very few consulting agencies in Uzbekistan that gets students into US universities <span className="text-white font-medium">without any certificates</span> — no IELTS, no SAT required. For the USA, only a passport and school grades (attestat) are needed.
+              </p>
+            </div>
+            <div className="rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
+              <div className="mb-4 text-4xl">📄</div>
+              <h3 className="text-xl font-bold mb-3">Official Contract With Every Client</h3>
+              <p className="text-slate-400 leading-7 text-sm">
+                Upnex works with full transparency. Every new client signs an official contract before any work begins. We are accountable for every step — from application to visa — and you are protected throughout the process.
+              </p>
+            </div>
+            <div className="rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
+              <div className="mb-4 text-4xl">📅</div>
+              <h3 className="text-xl font-bold mb-3">Founded August 19</h3>
+              <p className="text-slate-400 leading-7 text-sm">
+                Since its founding on August 19, Upnex has helped dozens of students successfully receive US student visas and begin studying abroad. We have offices in both <span className="text-white font-medium">Tashkent, Uzbekistan</span> and operate with a consultant based in <span className="text-white font-medium">New York, USA</span>.
+              </p>
+            </div>
+          </div>
+
+          {/* Who can apply */}
+          <div className="rounded-[28px] border border-blue-500/20 bg-blue-500/5 p-8 lg:p-12">
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Who Can Apply With Upnex?</h3>
+                <p className="text-slate-300 leading-8 mb-6">
+                  If you have finished or are finishing <span className="text-white font-semibold">11th grade</span>, you are ready to work with Upnex. No IELTS, no SAT, no extra certificates needed.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    '✅ Passport + school certificate (attestat) is enough for USA',
+                    '✅ 80% to 100% scholarships available',
+                    '✅ Official contract signed with every student',
+                    '✅ All documents prepared by the Upnex team',
+                    '✅ Embassy interview coaching included',
+                    '✅ Support until you land at your university',
+                  ].map((item) => (
+                    <li key={item} className="text-sm text-slate-300">{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <div className="rounded-2xl bg-slate-900 border border-slate-800 p-5">
+                  <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Important Note</p>
+                  <p className="text-sm text-slate-300 leading-7">
+                    No agency in the world can guarantee a US visa — the final decision belongs to the US Embassy. However, Upnex prepares every student thoroughly for their English-language embassy interview to maximize their chances of success.
+                  </p>
+                </div>
+                <a
+                  href={telegramLink('Hello! I want to start my application with Upnex. I have finished 11th grade.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full rounded-2xl bg-blue-600 py-4 text-center font-semibold transition hover:bg-blue-500"
+                >
+                  Start My Application →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section id="services" className="bg-slate-900/60 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Services</p>
-            <h2 className="text-4xl font-bold">Everything Students Need</h2>
+            <h2 className="text-4xl font-bold">Everything We Handle For You</h2>
+            <p className="mt-4 text-slate-400 max-w-xl mx-auto">From your first document to the moment you land — Upnex manages every step.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
-              { name: 'University Admissions', desc: 'We match you with the right university based on your GPA, goals, and budget — and manage the full application process.' },
-              { name: 'Scholarship Assistance', desc: 'We identify and apply for scholarships that can cover up to 80–100% of your tuition fees.' },
-              { name: 'Visa Preparation', desc: 'Full step-by-step support for preparing your student visa application and required documents.' },
-              { name: 'DS-160 Help', desc: 'Accurate and complete DS-160 form filling for students applying for a US student visa.' },
-              { name: 'Embassy Interview Practice', desc: 'Mock interviews and personalized coaching to help you face your embassy interview with confidence.' },
-              { name: 'Accommodation Support', desc: 'We help you find safe, affordable housing near your university before you arrive.' },
-              { name: 'English Courses', desc: 'Guidance on improving your English to meet university admission and visa language requirements.' },
-              { name: 'Post-Arrival Support', desc: 'Our support doesn\'t stop at departure — we guide you through orientation and settling in abroad.' },
+              { icon: '🎓', name: 'University Admissions', desc: 'We find the right university for your GPA and budget, and manage the entire application process on your behalf.' },
+              { icon: '💰', name: 'Scholarship 80–100%', desc: 'We apply for merit scholarships covering 80% to 100% of tuition — without IELTS or SAT requirements.' },
+              { icon: '🛂', name: 'Visa Preparation', desc: 'Complete F-1 visa file preparation including DS-160, financial documents, and all embassy paperwork.' },
+              { icon: '🗣', name: 'Embassy Interview Coaching', desc: 'We coach every student for their English-language embassy interview so they walk in prepared and confident.' },
+              { icon: '✍️', name: 'Motivation Letter & Essays', desc: 'Our team writes professional motivation letters, personal statements, and essays that strengthen your application.' },
+              { icon: '📋', name: 'All Documents Covered', desc: 'Invitation letters, financial affidavits, transcript translations — we handle every document from start to finish.' },
+              { icon: '💼', name: 'Financial Management', desc: 'We guide students on proof-of-funds requirements and help prepare all financial documents for visa and enrollment.' },
+              { icon: '🤝', name: 'Post-Arrival Support', desc: 'Oyatillo personally meets students arriving in New York and supports them through their first days on campus.' },
             ].map((service) => (
               <a
                 key={service.name}
@@ -442,8 +516,8 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="rounded-[28px] border border-white/10 bg-slate-950/70 p-6 transition hover:border-blue-500/40 hover:bg-slate-900 cursor-pointer"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/20 text-xl text-blue-300">✦</div>
-                <h3 className="text-xl font-semibold">{service.name}</h3>
+                <div className="mb-4 text-3xl">{service.icon}</div>
+                <h3 className="text-lg font-semibold">{service.name}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-400">{service.desc}</p>
                 <p className="mt-4 text-sm text-blue-400 font-medium">Get help →</p>
               </a>
@@ -463,10 +537,15 @@ export default function App() {
             <img src={oyatilloImage} alt="Oyatillo" className="h-[420px] w-full object-cover object-top" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Oyatillo</h3>
-              <p className="mt-2 text-blue-400">USA-Based Consultant • New York</p>
+              <p className="mt-2 text-blue-400">Co-Founder • USA Representative • New York</p>
               <p className="mt-5 leading-8 text-slate-300">
-                Oyatillo is based in New York and helps students with university selection, scholarship planning, and full support for studying in the USA. He has personal experience navigating the US education system and guides students every step of the way.
+                Oyatillo is Upnex's New York-based co-founder who personally handles all student documents — scholarship applications, university admissions, and visa files. Once students receive their visa, Oyatillo meets them in New York and supports them through arrival and their first days on campus. He also manages creative content and marketing from the USA.
               </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {['University Admissions', 'Scholarship Applications', 'Visa Documents', 'Student Arrival Support'].map((tag) => (
+                  <span key={tag} className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs text-blue-300">{tag}</span>
+                ))}
+              </div>
               <a
                 href={telegramLink('Hello Oyatillo! I would like to get consultation about studying in the USA.')}
                 target="_blank"
@@ -481,12 +560,17 @@ export default function App() {
             <img src={nurislomImage} alt="Nurislom" className="h-[420px] w-full object-cover object-top" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Nurislom</h3>
-              <p className="mt-2 text-blue-400">Uzbekistan-Based Consultant • Tashkent</p>
+              <p className="mt-2 text-blue-400">Co-Founder • Uzbekistan Director • Tashkent</p>
               <p className="mt-5 leading-8 text-slate-300">
-                Nurislom runs the Upnex office in Tashkent and guides students through the entire application process — from document preparation and language test guidance to visa interviews and pre-departure support.
+                Nurislom is Upnex's co-founder and runs all operations from the Tashkent office. He meets every new client, signs official contracts, and manages the full Uzbekistan side — visa preparation, financial document management, embassy interview coaching, office content, and all additional student services. He is the first point of contact for students in Uzbekistan.
               </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {['Client Contracts', 'Visa Coaching', 'Financial Docs', 'Office Management', 'Student Services'].map((tag) => (
+                  <span key={tag} className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs text-blue-300">{tag}</span>
+                ))}
+              </div>
               <a
-                href={telegramLink('Hello! I would like to get consultation from Upnex Tashkent office.')}
+                href={telegramLink('Hello! I would like to get consultation from the Upnex Tashkent office.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-block rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold transition hover:bg-blue-500"
