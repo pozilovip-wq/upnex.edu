@@ -4,6 +4,8 @@ import oyatilloImage from './IMG_4405.jpeg'
 import nurislomImage from './IMG_5404.JPG'
 import UniversitiesSection from './UniversitiesSection.jsx'
 import universitiesData from './universities.js'
+import HeroHeadline from './HeroHeadline.jsx'
+import { useReveal } from './useReveal.js'
 
 const TELEGRAM = 'https://t.me/upnex_admin'
 
@@ -203,6 +205,7 @@ const universities = [
 
 export default function App() {
   const [selectedCountry, setSelectedCountry] = useState(null)
+  useReveal()
 
   const country = selectedCountry ? countryDetails[selectedCountry] : null
 
@@ -351,19 +354,16 @@ export default function App() {
             <div className="mb-6 inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
               Trusted By Students In USA, UK, Canada & Australia
             </div>
-            <h2 className="mb-6 text-5xl font-bold leading-tight lg:text-7xl">
-              We Are Upnex. <br />
-              <span className="text-blue-400">You Are Going To Be Next.</span>
-            </h2>
-            <p className="mb-8 max-w-2xl text-lg leading-8 text-slate-300">
+            <HeroHeadline />
+            <p className="reveal mb-8 max-w-2xl text-lg leading-8 text-slate-300" style={{animationDelay:'0.1s'}}>
               Upnex helps students receive high scholarships in the USA, UK, Canada, and Australia. Many partner universities offer admission pathways without IELTS or SAT requirements.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="reveal reveal-delay-2 flex flex-wrap gap-4">
               <a
                 href={telegramLink('Hello! I would like to book a free consultation with Upnex.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-blue-600 px-7 py-4 text-sm font-semibold transition hover:bg-blue-500"
+                className="btn-shine rounded-full bg-blue-600 px-7 py-4 text-sm font-semibold transition hover:bg-blue-500"
               >
                 Book Free Consultation
               </a>
@@ -380,15 +380,15 @@ export default function App() {
                 { stat: '80–100%', label: 'Scholarship Opportunities' },
                 { stat: '4', label: 'Countries Covered' },
                 { stat: 'NY + UZ', label: 'International Team' },
-              ].map(({ stat, label }) => (
-                <div key={label} className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+              ].map(({ stat, label }, i) => (
+                <div key={label} className={`reveal reveal-delay-${i + 1} card-lift rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl`}>
                   <h3 className="text-2xl font-bold">{stat}</h3>
                   <p className="mt-2 text-sm text-slate-400">{label}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="overflow-hidden rounded-[36px] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
+          <div className="reveal-right float-anim overflow-hidden rounded-[36px] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
             <img src={oyatilloImage} alt="Oyatillo" className="h-[650px] w-full object-cover" />
           </div>
         </div>
@@ -402,11 +402,11 @@ export default function App() {
           <p className="mt-4 text-slate-400">Click any country to see full details and how UPNEX can help you.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {Object.entries(countryDetails).map(([name, data]) => (
+          {Object.entries(countryDetails).map(([name, data], i) => (
             <button
               key={name}
               onClick={() => setSelectedCountry(name)}
-              className="rounded-[28px] border border-white/10 bg-white/5 p-8 text-left transition hover:-translate-y-2 hover:border-blue-500/40 hover:bg-white/10 cursor-pointer"
+              className={`reveal reveal-delay-${i + 1} card-lift rounded-[28px] border border-white/10 bg-white/5 p-8 text-left transition hover:border-blue-500/40 hover:bg-white/10 cursor-pointer`}
             >
               <div className="mb-5 text-5xl">{data.flag}</div>
               <h3 className="text-2xl font-semibold">{name}</h3>
@@ -425,21 +425,21 @@ export default function App() {
             <h2 className="text-4xl font-bold">Why Upnex Is Different</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-3 mb-12">
-            <div className="rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
+            <div className="reveal reveal-delay-1 card-lift rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
               <div className="mb-4 text-4xl">🏆</div>
               <h3 className="text-xl font-bold mb-3">The Only Agency in the Valley</h3>
               <p className="text-slate-400 leading-7 text-sm">
                 Upnex is one of the very few consulting agencies in Uzbekistan that gets students into US universities <span className="text-white font-medium">without any certificates</span> — no IELTS, no SAT required. For the USA, only a passport and school grades (attestat) are needed.
               </p>
             </div>
-            <div className="rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
+            <div className="reveal reveal-delay-2 card-lift rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
               <div className="mb-4 text-4xl">📄</div>
               <h3 className="text-xl font-bold mb-3">Official Contract With Every Client</h3>
               <p className="text-slate-400 leading-7 text-sm">
                 Upnex works with full transparency. Every new client signs an official contract before any work begins. We are accountable for every step — from application to visa — and you are protected throughout the process.
               </p>
             </div>
-            <div className="rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
+            <div className="reveal reveal-delay-3 card-lift rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
               <div className="mb-4 text-4xl">📅</div>
               <h3 className="text-xl font-bold mb-3">Founded August 19</h3>
               <p className="text-slate-400 leading-7 text-sm">
@@ -533,7 +533,7 @@ export default function App() {
           <h2 className="text-4xl font-bold">The People Behind Upnex</h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
+          <div className="reveal-left overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
             <img src={oyatilloImage} alt="Oyatillo" className="h-[420px] w-full object-cover object-top" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Oyatillo</h3>
@@ -556,7 +556,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
+          <div className="reveal-right overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
             <img src={nurislomImage} alt="Nurislom" className="h-[420px] w-full object-cover object-top" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Nurislom</h3>
