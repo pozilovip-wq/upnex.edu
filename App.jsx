@@ -294,20 +294,20 @@ const SERVICES = [
 /* ─── COUNTRY MODAL ─── */
 function CountryModal({ selectedCountry, onClose }) {
   const country = countryDetails[selectedCountry]
+  const overlayRef = useRef(null)
   if (!country) return null
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden'
+    // Always scroll modal to top when it opens
+    if (overlayRef.current) overlayRef.current.scrollTop = 0
     const handler = (e) => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', handler)
-    return () => {
-      document.body.style.overflow = ''
-      window.removeEventListener('keydown', handler)
-    }
-  }, [onClose])
+    return () => window.removeEventListener('keydown', handler)
+  }, [selectedCountry, onClose])
 
   return (
     <div
+      ref={overlayRef}
       className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto px-4 py-8"
       style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)' }}
       onClick={onClose}
