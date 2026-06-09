@@ -159,6 +159,12 @@ body {
 }
 .float-anim {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ─── PARALLAX ELEMENTS ─── */
+#para-orb1, #para-orb2, #para-orb3, #para-photo, #para-herobg {
+  will-change: transform;
 }
 
 /* ─── SHINE BUTTON ─── */

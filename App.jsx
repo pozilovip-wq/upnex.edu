@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import logo from './IMG_4167.JPG'
 import oyatilloImage from './oyatillo_new.jpg'
 import nurislomImage from './IMG_5404.JPG'
@@ -11,6 +11,46 @@ const TELEGRAM = 'https://t.me/upnex_admin'
 
 function telegramLink(message) {
   return `${TELEGRAM}?text=${encodeURIComponent(message)}`
+}
+
+/* ─── PARALLAX HOOK ─── */
+function useParallax() {
+  useEffect(() => {
+    const orb1  = document.getElementById('para-orb1')
+    const orb2  = document.getElementById('para-orb2')
+    const orb3  = document.getElementById('para-orb3')
+    const photo = document.getElementById('para-photo')
+    const heroBg = document.getElementById('para-herobg')
+
+    let raf = null
+    let lastY = window.scrollY
+
+    function update() {
+      const y = window.scrollY
+      if (Math.abs(y - lastY) < 0.5) { raf = null; return }
+      lastY = y
+
+      // Orbs drift at different rates (slow, creates depth)
+      if (orb1)  orb1.style.transform  = `translateY(${y * 0.18}px)`
+      if (orb2)  orb2.style.transform  = `translateY(${y * 0.12}px)`
+      if (orb3)  orb3.style.transform  = `translateY(${y * 0.22}px)`
+      // Photo lifts slightly slower than scroll
+      if (photo) photo.style.transform = `translateY(${y * 0.08}px)`
+      // Hero gradient bg shifts very slowly
+      if (heroBg) heroBg.style.transform = `translateY(${y * 0.05}px)`
+      raf = null
+    }
+
+    function onScroll() {
+      if (!raf) raf = requestAnimationFrame(update)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (raf) cancelAnimationFrame(raf)
+    }
+  }, [])
 }
 
 /* ─── SCROLL PROGRESS BAR ─── */
@@ -352,6 +392,7 @@ export default function App() {
   const [selectedCountry, setSelectedCountry] = useState(null)
   useReveal()
   useScrollProgress()
+  useParallax()
 
   return (
     <div className="min-h-screen bg-slate-950 text-white page-enter">
@@ -405,11 +446,11 @@ export default function App() {
       {/* ── HERO ── */}
       <section id="home" className="relative overflow-hidden border-b border-white/10">
 
-        {/* Aurora background orbs */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="aurora-orb-1 absolute -top-40 -left-40 h-[700px] w-[700px] rounded-full bg-blue-600/20 blur-[120px]" />
-          <div className="aurora-orb-2 absolute top-20 right-0 h-[500px] w-[500px] rounded-full bg-indigo-600/15 blur-[100px]" />
-          <div className="aurora-orb-3 absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-violet-700/10 blur-[90px]" />
+        {/* Aurora background orbs — parallax */}
+        <div id="para-herobg" className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div id="para-orb1" className="aurora-orb-1 absolute -top-40 -left-40 h-[700px] w-[700px] rounded-full bg-blue-600/20 blur-[120px]" />
+          <div id="para-orb2" className="aurora-orb-2 absolute top-20 right-0 h-[500px] w-[500px] rounded-full bg-indigo-600/15 blur-[100px]" />
+          <div id="para-orb3" className="aurora-orb-3 absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-violet-700/10 blur-[90px]" />
         </div>
 
         <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-2 lg:items-center">
@@ -455,8 +496,8 @@ export default function App() {
             </div>
           </div>
 
-          {/* Floating photo */}
-          <div className="reveal-right float-anim overflow-hidden rounded-[36px] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
+          {/* Floating photo — parallax */}
+          <div id="para-photo" className="reveal-right float-anim overflow-hidden rounded-[36px] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
             <img src={oyatilloImage} alt="Oyatillo" className="h-[650px] w-full object-cover" />
           </div>
         </div>
