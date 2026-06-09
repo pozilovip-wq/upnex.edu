@@ -19,54 +19,58 @@ const COUNTRY_FACTS = {
 /* ─── UNIVERSITY DETAIL MODAL ─── */
 function UniModal({ u, onClose }) {
   const facts = COUNTRY_FACTS[u.country] || {}
-  const overlayRef = useRef(null)
+  const bodyRef = useRef(null)
 
-  // scroll modal to top & lock body scroll
   useEffect(() => {
-    if (overlayRef.current) overlayRef.current.scrollTop = 0
-    const prev = document.body.style.overflow
+    // Always start at top of modal body
+    if (bodyRef.current) bodyRef.current.scrollTop = 0
+    // Lock page scroll
     document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = prev }
+    return () => { document.body.style.overflow = '' }
   }, [u])
 
-  // close on Escape
   useEffect(() => {
-    const handler = (e) => { if (e.key === 'Escape') onClose() }
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
+    const onKey = (e) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
 
   const description = u.details ||
-    `${u.name} is a well-regarded institution in ${u.location} offering quality education to international students. ` +
-    `The university provides strong academic programs, modern facilities, and dedicated support services for students from Central Asia and beyond. ` +
-    `With generous scholarship opportunities and multiple intake dates, it is an excellent choice for Uzbek students seeking a world-class education.`
+    `${u.name} is a respected institution in ${u.location} offering quality programs to international students. ` +
+    `The university provides modern facilities, dedicated international student support, and strong career pathways. ` +
+    `With scholarships and flexible intakes, it is an excellent choice for Uzbek students seeking a world-class education abroad.`
 
   return (
+    /* Overlay — centres the card, NOT scrollable */
     <div
-      ref={overlayRef}
-      className="fixed inset-0 flex items-start justify-center overflow-y-auto p-4 py-8"
-      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(8px)', zIndex: 9999 }}
+      className="fixed inset-0 flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)', zIndex: 9999 }}
       onClick={onClose}
     >
+      {/* Card — THIS is the scrollable container */}
       <div
-        className="relative w-full max-w-2xl rounded-3xl border border-slate-700 bg-slate-900 shadow-2xl my-auto"
-        style={{ animation: 'uniModalIn 0.3s cubic-bezier(0.34,1.56,0.64,1)' }}
+        className="relative w-full max-w-2xl rounded-3xl border border-slate-700 bg-slate-900 shadow-2xl flex flex-col"
+        style={{
+          maxHeight: '88vh',
+          animation: 'uniModalIn 0.28s cubic-bezier(0.34,1.56,0.64,1)'
+        }}
         onClick={(e) => e.stopPropagation()}
       >
-        <style>{`@keyframes uniModalIn { from{opacity:0;transform:scale(0.93) translateY(16px)} to{opacity:1;transform:scale(1) translateY(0)} }`}</style>
-        {/* Header */}
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 rounded-t-3xl border-b border-slate-800 bg-slate-900 p-6">
+        <style>{`@keyframes uniModalIn{from{opacity:0;transform:scale(0.92) translateY(14px)}to{opacity:1;transform:scale(1) translateY(0)}}`}</style>
+
+        {/* ── FIXED HEADER (never scrolls away) ── */}
+        <div className="shrink-0 flex items-start justify-between gap-4 rounded-t-3xl border-b border-slate-800 bg-slate-900 px-6 pt-6 pb-4">
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-3 mb-1">
-              <span className="text-3xl">{FLAG[u.country]}</span>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-3xl leading-none">{FLAG[u.country]}</span>
               <span className="rounded-full bg-blue-900 border border-blue-700 px-3 py-1 text-xs font-semibold text-blue-300">{u.tag}</span>
             </div>
-            <h2 className="text-xl font-bold text-white leading-snug mt-2">{u.name}</h2>
+            <h2 className="text-xl font-bold text-white leading-snug">{u.name}</h2>
             <p className="text-sm text-slate-400 mt-1">📍 {u.location}</p>
           </div>
           <button
             onClick={onClose}
-            className="shrink-0 rounded-full border border-slate-700 bg-slate-800 p-2 text-slate-400 hover:text-white hover:border-slate-500 transition-colors"
+            className="shrink-0 mt-1 rounded-full border border-slate-700 bg-slate-800 p-2 text-slate-400 hover:text-white hover:border-slate-500 transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M18 6L6 18M6 6l12 12"/>
@@ -74,7 +78,8 @@ function UniModal({ u, onClose }) {
           </button>
         </div>
 
-        <div className="p-6 space-y-6">
+        {/* ── SCROLLABLE BODY ── */}
+        <div ref={bodyRef} className="overflow-y-auto p-6 space-y-6">
 
           {/* About */}
           <div>
@@ -111,9 +116,7 @@ function UniModal({ u, onClose }) {
               <p className="text-xs uppercase tracking-widest text-blue-400 mb-3">Available Programs</p>
               <div className="flex flex-wrap gap-2">
                 {u.programs.map((p) => (
-                  <span key={p} className="rounded-full bg-slate-800 border border-slate-700 px-3 py-1.5 text-sm text-slate-300">
-                    {p}
-                  </span>
+                  <span key={p} className="rounded-full bg-slate-800 border border-slate-700 px-3 py-1.5 text-sm text-slate-300">{p}</span>
                 ))}
               </div>
             </div>
@@ -122,7 +125,7 @@ function UniModal({ u, onClose }) {
           {/* Country Info */}
           <div>
             <p className="text-xs uppercase tracking-widest text-blue-400 mb-3">Studying in {u.country}</p>
-            <div className="rounded-2xl bg-slate-800 p-4 space-y-2">
+            <div className="rounded-2xl bg-slate-800 p-4 space-y-3">
               <div className="flex justify-between text-sm">
                 <span className="text-slate-500">Visa Type</span>
                 <span className="text-white font-medium">{facts.visa}</span>
@@ -139,23 +142,17 @@ function UniModal({ u, onClose }) {
           </div>
 
           {/* CTA */}
-          <div className="flex gap-3 pt-2">
+          <div className="flex gap-3 pb-2">
             {u.website && (
-              <a
-                href={u.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 rounded-2xl border border-slate-700 bg-slate-800 py-3.5 text-center text-sm font-semibold text-slate-300 hover:border-blue-500 hover:text-white transition-colors"
-              >
+              <a href={u.website} target="_blank" rel="noopener noreferrer"
+                className="flex-1 rounded-2xl border border-slate-700 bg-slate-800 py-3.5 text-center text-sm font-semibold text-slate-300 hover:border-blue-500 hover:text-white transition-colors">
                 🌐 Official Website
               </a>
             )}
             <a
-              href={telegramLink(`Salom! ${u.name} universiteti (${u.country}) haqida batafsil ma'lumot olmoqchiman. Yordam bera olasizmi?`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 rounded-2xl bg-blue-600 py-3.5 text-center text-sm font-semibold text-white hover:bg-blue-500 transition-colors"
-            >
+              href={telegramLink(`Salom! ${u.name} (${u.country}) haqida ma'lumot olmoqchiman. Yordam bera olasizmi?`)}
+              target="_blank" rel="noopener noreferrer"
+              className="flex-1 rounded-2xl bg-blue-600 py-3.5 text-center text-sm font-semibold text-white hover:bg-blue-500 transition-colors">
               📩 Apply with Upnex
             </a>
           </div>
