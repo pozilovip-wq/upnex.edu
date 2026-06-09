@@ -19,12 +19,15 @@ const COUNTRY_FACTS = {
 /* ─── UNIVERSITY DETAIL MODAL ─── */
 function UniModal({ u, onClose }) {
   const facts = COUNTRY_FACTS[u.country] || {}
+  const overlayRef = useRef(null)
 
-  // lock body scroll
+  // scroll modal to top & lock body scroll
   useEffect(() => {
+    if (overlayRef.current) overlayRef.current.scrollTop = 0
+    const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
-  }, [])
+    return () => { document.body.style.overflow = prev }
+  }, [u])
 
   // close on Escape
   useEffect(() => {
@@ -40,14 +43,17 @@ function UniModal({ u, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(6px)' }}
+      ref={overlayRef}
+      className="fixed inset-0 flex items-start justify-center overflow-y-auto p-4 py-8"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(8px)', zIndex: 9999 }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border border-slate-700 bg-slate-900 shadow-2xl"
+        className="relative w-full max-w-2xl rounded-3xl border border-slate-700 bg-slate-900 shadow-2xl my-auto"
+        style={{ animation: 'uniModalIn 0.3s cubic-bezier(0.34,1.56,0.64,1)' }}
         onClick={(e) => e.stopPropagation()}
       >
+        <style>{`@keyframes uniModalIn { from{opacity:0;transform:scale(0.93) translateY(16px)} to{opacity:1;transform:scale(1) translateY(0)} }`}</style>
         {/* Header */}
         <div className="sticky top-0 z-10 flex items-start justify-between gap-4 rounded-t-3xl border-b border-slate-800 bg-slate-900 p-6">
           <div className="flex-1 min-w-0">
@@ -255,8 +261,10 @@ export default function UniversitiesSection({ universities }) {
   function reset() { setVisible(12) }
 
   return (
+    <>
+    {/* Modal rendered OUTSIDE section so fixed positioning is always viewport-relative */}
+    {modalUni && <UniModal u={modalUni} onClose={() => setModalUni(null)} />}
     <section id="universities" className="bg-slate-950 py-24">
-      {modalUni && <UniModal u={modalUni} onClose={() => setModalUni(null)} />}
 
       <div className="mx-auto max-w-7xl px-6">
 
@@ -355,5 +363,6 @@ export default function UniversitiesSection({ universities }) {
         )}
       </div>
     </section>
+    </>
   )
 }
