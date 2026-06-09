@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import logo from './IMG_4167.JPG'
 import oyatilloImage from './oyatillo_new.jpg'
 import nurislomImage from './IMG_5404.JPG'
@@ -13,6 +13,75 @@ function telegramLink(message) {
   return `${TELEGRAM}?text=${encodeURIComponent(message)}`
 }
 
+/* ─── SCROLL PROGRESS BAR ─── */
+function useScrollProgress() {
+  useEffect(() => {
+    const bar = document.getElementById('scroll-progress')
+    if (!bar) return
+    const onScroll = () => {
+      const scrolled = window.scrollY
+      const total = document.documentElement.scrollHeight - window.innerHeight
+      bar.style.width = total > 0 ? `${(scrolled / total) * 100}%` : '0%'
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+}
+
+/* ─── ANIMATED COUNTER ─── */
+function useCounter(target, duration = 1400) {
+  const [value, setValue] = useState(0)
+  const ref = useRef(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !started.current) {
+        started.current = true
+        const num = parseInt(target.replace(/\D/g, ''), 10)
+        if (!num) { setValue(target); return }
+        let start = 0
+        const step = Math.ceil(num / (duration / 16))
+        const timer = setInterval(() => {
+          start += step
+          if (start >= num) {
+            setValue(num)
+            clearInterval(timer)
+          } else {
+            setValue(start)
+          }
+        }, 16)
+      }
+    }, { threshold: 0.5 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [target, duration])
+
+  return { ref, value }
+}
+
+/* ─── STAT COUNTER ITEM ─── */
+function StatCounter({ stat, label, index }) {
+  const num = parseInt(stat.replace(/\D/g, ''), 10)
+  const suffix = stat.replace(/[\d,]/g, '')
+  const { ref, value } = useCounter(stat)
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal reveal-delay-${index + 1} card-lift rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl`}
+    >
+      <h3 className="text-2xl font-bold tabular-nums">
+        {num ? `${value.toLocaleString()}${suffix}` : stat}
+      </h3>
+      <p className="mt-2 text-sm text-slate-400">{label}</p>
+    </div>
+  )
+}
+
+/* ─── COUNTRY DETAILS DATA ─── */
 const countryDetails = {
   USA: {
     flag: '🇺🇸',
@@ -35,7 +104,7 @@ const countryDetails = {
       'Post-arrival support',
     ],
     whyStudy: [
-      '🎓 Home to many of the world\'s top-ranked universities',
+      "🎓 Home to many of the world's top-ranked universities",
       '💰 Generous merit scholarships available for international students',
       '💼 On-campus work opportunities during studies',
       '🌍 Diverse and multicultural campus environments',
@@ -53,7 +122,7 @@ const countryDetails = {
   UK: {
     flag: '🇬🇧',
     tagline: 'Study at Top UK Universities with Scholarships',
-    about: 'The United Kingdom is home to some of the world\'s most respected universities. UPNEX helps students apply to UK universities, explore scholarship opportunities, and navigate the student visa process with confidence. Many universities offer flexible English language options and multiple intakes throughout the year.',
+    about: "The United Kingdom is home to some of the world's most respected universities. UPNEX helps students apply to UK universities, explore scholarship opportunities, and navigate the student visa process with confidence. Many universities offer flexible English language options and multiple intakes throughout the year.",
     infoCards: [
       { label: 'Visa', value: 'UK Student Visa' },
       { label: 'Scholarships', value: 'Up to £10,000+ / year' },
@@ -73,24 +142,18 @@ const countryDetails = {
     whyStudy: [
       '🎓 World-renowned universities',
       '📅 September and January intakes',
-      '⏱ Bachelor\'s degrees typically completed in 3 years',
-      '🎯 Master\'s degrees often completed in 1 year',
+      "⏱ Bachelor's degrees typically completed in 3 years",
+      "🎯 Master's degrees often completed in 1 year",
       '💼 Part-time work opportunities while studying',
       '🌍 Graduate Route visa available after graduation',
     ],
     keyFacts: [
-      { label: 'Degree Duration', value: 'Bachelor\'s: 3 Years · Master\'s: 1 Year' },
+      { label: 'Degree Duration', value: "Bachelor's: 3 Years · Master's: 1 Year" },
       { label: 'Average Tuition', value: '£10,000 – £25,000 / year' },
       { label: 'Living Costs', value: '£800 – £1,500 / month (varies by city)' },
       { label: 'After Graduation', value: 'Graduate Route — Stay & work in the UK' },
     ],
-    universities: [
-      'University of Hertfordshire',
-      'University of Chester',
-      'De Montfort University',
-      'University of East London',
-      'Middlesex University',
-    ],
+    universities: ['University of Hertfordshire', 'University of Chester', 'De Montfort University', 'University of East London', 'Middlesex University'],
   },
   Canada: {
     flag: '🇨🇦',
@@ -126,12 +189,7 @@ const countryDetails = {
       { label: 'Living Costs', value: 'Vary by province and city' },
       { label: 'After Graduation', value: 'Post-Graduation Work Permit (PGWP)' },
     ],
-    universities: [
-      'Seneca Polytechnic',
-      'Humber College',
-      'Algonquin College',
-      'Conestoga College',
-    ],
+    universities: ['Seneca Polytechnic', 'Humber College', 'Algonquin College', 'Conestoga College'],
   },
   Australia: {
     flag: '🇦🇺',
@@ -167,145 +225,146 @@ const countryDetails = {
       { label: 'Living Costs', value: 'Vary by city and lifestyle' },
       { label: 'After Graduation', value: 'Career & graduate work opportunities' },
     ],
-    universities: [
-      'RMIT University',
-      'Griffith University',
-      'University of Southern Queensland',
-      'Charles Darwin University',
-    ],
+    universities: ['RMIT University', 'Griffith University', 'University of Southern Queensland', 'Charles Darwin University'],
   },
 }
 
-const universities = [
-  {
-    name: 'Hartwick College',
-    location: 'Oneonta, New York, USA',
-    tuition: '$25,000–$35,000 / year',
-    scholarship: 'Up to $32,000 / year',
-    tag: 'Affordable',
-    details: 'Hartwick College is a small liberal arts college in upstate New York offering generous merit scholarships to international students. No SAT required. Programs in business, science, arts, nursing and more. UPNEX has direct contacts at the admissions office to help fast-track your application.',
-  },
-  {
-    name: 'Pace University',
-    location: 'New York City, New York, USA',
-    tuition: '$48,000–$55,000 / year',
-    scholarship: 'Up to $30,000 / year',
-    tag: 'NYC',
-    details: 'Pace University is in the heart of Manhattan and Westchester. Strong programs in business, law, nursing, and technology. Incredible internship and career opportunities in New York City. UPNEX helps with the full application and scholarship process.',
-  },
-  {
-    name: 'Monroe University',
-    location: 'Bronx, New York, USA',
-    tuition: '$15,000–$25,000 / year',
-    scholarship: 'Up to $3,500 / semester',
-    tag: 'Fast Admissions',
-    details: 'Monroe University offers fast admissions (often within days) and very affordable tuition. Located in the Bronx, New York. Focus on business, criminal justice, and computer science. A great option for students who want to start their studies quickly.',
-  },
+/* ─── SERVICES DATA ─── */
+const SERVICES = [
+  { icon: '🎓', name: 'University Admissions', desc: 'We find the right university for your GPA and budget, and manage the entire application process on your behalf.' },
+  { icon: '💰', name: 'Scholarship 80–100%', desc: 'We apply for merit scholarships covering 80% to 100% of tuition — without IELTS or SAT requirements.' },
+  { icon: '🛂', name: 'Visa Preparation', desc: 'Complete F-1 visa file preparation including DS-160, financial documents, and all embassy paperwork.' },
+  { icon: '🗣', name: 'Embassy Interview Coaching', desc: 'We coach every student for their English-language embassy interview so they walk in prepared and confident.' },
+  { icon: '✍️', name: 'Motivation Letter & Essays', desc: 'Our team writes professional motivation letters, personal statements, and essays that strengthen your application.' },
+  { icon: '📋', name: 'All Documents Covered', desc: 'Invitation letters, financial affidavits, transcript translations — we handle every document from start to finish.' },
+  { icon: '💼', name: 'Financial Management', desc: 'We guide students on proof-of-funds requirements and help prepare all financial documents for visa and enrollment.' },
+  { icon: '🤝', name: 'Post-Arrival Support', desc: 'Oyatillo personally meets students arriving in New York and supports them through their first days on campus.' },
 ]
 
+/* ─── COUNTRY MODAL ─── */
+function CountryModal({ selectedCountry, onClose }) {
+  const country = countryDetails[selectedCountry]
+  if (!country) return null
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    const handler = (e) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', handler)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handler)
+    }
+  }, [onClose])
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto px-4 py-8"
+      style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl rounded-[32px] border border-white/10 bg-slate-900 p-8 shadow-2xl"
+        style={{ animation: 'modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1)' }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <style>{`
+          @keyframes modalIn {
+            from { opacity:0; transform: scale(0.92) translateY(20px); }
+            to   { opacity:1; transform: scale(1) translateY(0); }
+          }
+        `}</style>
+
+        <button
+          onClick={onClose}
+          className="absolute right-6 top-6 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-slate-400 hover:bg-white/20 hover:text-white transition text-lg"
+        >✕</button>
+
+        <div className="text-5xl mb-3">{country.flag}</div>
+        <h2 className="text-3xl font-bold">{selectedCountry}</h2>
+        <p className="mt-1 text-blue-400 font-medium">{country.tagline}</p>
+        <p className="mt-5 leading-8 text-slate-300 text-sm">{country.about}</p>
+
+        <div className="mt-6 grid grid-cols-2 gap-3">
+          {country.infoCards.map((card) => (
+            <div key={card.label} className="rounded-2xl bg-white/5 p-4">
+              <p className="text-xs text-slate-400 mb-1">{card.label}</p>
+              <p className="text-sm font-semibold leading-6">{card.value}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-7">
+          <h3 className="text-lg font-semibold mb-3">What UPNEX Does For You</h3>
+          <ul className="space-y-2">
+            {country.services.map((s) => (
+              <li key={s} className="flex items-start gap-3 text-sm text-slate-300">
+                <span className="mt-0.5 text-blue-400 font-bold">✓</span>{s}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-7">
+          <h3 className="text-lg font-semibold mb-3">Why Study in {selectedCountry}?</h3>
+          <ul className="space-y-2">
+            {country.whyStudy.map((s) => (
+              <li key={s} className="text-sm text-slate-300">{s}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-7">
+          <h3 className="text-lg font-semibold mb-3">Key Facts</h3>
+          <div className="space-y-3">
+            {country.keyFacts.map((f) => (
+              <div key={f.label} className="flex justify-between border-b border-white/10 pb-3 text-sm">
+                <span className="text-slate-400">{f.label}</span>
+                <span className="text-right font-medium max-w-[55%]">{f.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-7">
+          <h3 className="text-lg font-semibold mb-3">Partner Universities</h3>
+          <div className="flex flex-wrap gap-2">
+            {country.universities.map((u) => (
+              <span key={u} className="rounded-full bg-blue-500/20 px-4 py-2 text-sm text-blue-300">{u}</span>
+            ))}
+          </div>
+        </div>
+
+        <a
+          href={telegramLink(`Hello! I'm interested in studying in ${selectedCountry}. Can you help me?`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 block w-full rounded-2xl bg-blue-600 py-4 text-center font-semibold transition hover:bg-blue-500"
+        >
+          Get Free Consultation for {selectedCountry} →
+        </a>
+      </div>
+    </div>
+  )
+}
+
+/* ─── MAIN APP ─── */
 export default function App() {
   const [selectedCountry, setSelectedCountry] = useState(null)
   useReveal()
-
-  const country = selectedCountry ? countryDetails[selectedCountry] : null
+  useScrollProgress()
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-slate-950 text-white page-enter">
+
+      {/* SCROLL PROGRESS */}
+      <div id="scroll-progress" />
 
       {/* COUNTRY MODAL */}
-      {country && (
-        <div
-          className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-black/70 backdrop-blur-sm px-4 py-8"
-          onClick={() => setSelectedCountry(null)}
-        >
-          <div
-            className="relative w-full max-w-2xl rounded-[32px] border border-white/10 bg-slate-900 p-8 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close */}
-            <button
-              onClick={() => setSelectedCountry(null)}
-              className="absolute right-6 top-6 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-slate-400 hover:bg-white/20 hover:text-white transition text-lg"
-            >
-              ✕
-            </button>
-
-            {/* Header */}
-            <div className="text-5xl mb-3">{country.flag}</div>
-            <h2 className="text-3xl font-bold">{selectedCountry}</h2>
-            <p className="mt-1 text-blue-400 font-medium">{country.tagline}</p>
-            <p className="mt-5 leading-8 text-slate-300 text-sm">{country.about}</p>
-
-            {/* Info Cards — 2x2 grid */}
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              {country.infoCards.map((card) => (
-                <div key={card.label} className="rounded-2xl bg-white/5 p-4">
-                  <p className="text-xs text-slate-400 mb-1">{card.label}</p>
-                  <p className="text-sm font-semibold leading-6">{card.value}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* What Upnex does */}
-            <div className="mt-7">
-              <h3 className="text-lg font-semibold mb-3">What UPNEX Does For You</h3>
-              <ul className="space-y-2">
-                {country.services.map((s) => (
-                  <li key={s} className="flex items-start gap-3 text-sm text-slate-300">
-                    <span className="mt-0.5 text-blue-400 font-bold">✓</span>
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Why Study */}
-            <div className="mt-7">
-              <h3 className="text-lg font-semibold mb-3">Why Study in {selectedCountry}?</h3>
-              <ul className="space-y-2">
-                {country.whyStudy.map((s) => (
-                  <li key={s} className="text-sm text-slate-300">{s}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Key Facts */}
-            <div className="mt-7">
-              <h3 className="text-lg font-semibold mb-3">Key Facts</h3>
-              <div className="space-y-3">
-                {country.keyFacts.map((f) => (
-                  <div key={f.label} className="flex justify-between border-b border-white/10 pb-3 text-sm">
-                    <span className="text-slate-400">{f.label}</span>
-                    <span className="text-right font-medium max-w-[55%]">{f.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Partner Universities */}
-            <div className="mt-7">
-              <h3 className="text-lg font-semibold mb-3">Partner Universities</h3>
-              <div className="flex flex-wrap gap-2">
-                {country.universities.map((u) => (
-                  <span key={u} className="rounded-full bg-blue-500/20 px-4 py-2 text-sm text-blue-300">{u}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA */}
-            <a
-              href={telegramLink(`Hello! I'm interested in studying in ${selectedCountry}. Can you help me?`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 block w-full rounded-2xl bg-blue-600 py-4 text-center font-semibold transition hover:bg-blue-500"
-            >
-              Get Free Consultation for {selectedCountry} →
-            </a>
-          </div>
-        </div>
+      {selectedCountry && (
+        <CountryModal selectedCountry={selectedCountry} onClose={() => setSelectedCountry(null)} />
       )}
 
-      {/* HEADER */}
+      {/* ── HEADER ── */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
@@ -317,12 +376,9 @@ export default function App() {
           </div>
 
           <nav className="hidden items-center gap-8 text-sm text-slate-300 lg:flex">
-            <a href="#home" className="transition hover:text-white">Home</a>
-            <a href="#about" className="transition hover:text-white">About</a>
-            <a href="#services" className="transition hover:text-white">Services</a>
-            <a href="#universities" className="transition hover:text-white">Universities</a>
-            <a href="#team" className="transition hover:text-white">Team</a>
-            <a href="#contact" className="transition hover:text-white">Contact</a>
+            {['Home','About','Services','Universities','Team','Contact'].map((link) => (
+              <a key={link} href={`#${link.toLowerCase()}`} className="nav-link transition hover:text-white">{link}</a>
+            ))}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -338,7 +394,7 @@ export default function App() {
               href={telegramLink('Hello! I would like a free consultation from Upnex.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold transition hover:bg-blue-500"
+              className="btn-shine rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold transition hover:bg-blue-500"
             >
               Free Consultation
             </a>
@@ -346,24 +402,35 @@ export default function App() {
         </div>
       </header>
 
-      {/* HERO */}
+      {/* ── HERO ── */}
       <section id="home" className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-700/30 via-slate-950 to-slate-950" />
+
+        {/* Aurora background orbs */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="aurora-orb-1 absolute -top-40 -left-40 h-[700px] w-[700px] rounded-full bg-blue-600/20 blur-[120px]" />
+          <div className="aurora-orb-2 absolute top-20 right-0 h-[500px] w-[500px] rounded-full bg-indigo-600/15 blur-[100px]" />
+          <div className="aurora-orb-3 absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-violet-700/10 blur-[90px]" />
+        </div>
+
         <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-2 lg:items-center">
           <div>
-            <div className="mb-6 inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
-              Trusted By Students In USA, UK, Canada & Australia
+            {/* Badge */}
+            <div className="mb-6 inline-flex badge-pulse rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
+              ✦ Trusted By Students In USA, UK, Canada &amp; Australia
             </div>
+
             <HeroHeadline />
-            <p className="reveal mb-8 max-w-2xl text-lg leading-8 text-slate-300" style={{animationDelay:'0.1s'}}>
+
+            <p className="reveal mb-8 max-w-2xl text-lg leading-8 text-slate-300">
               Upnex helps students receive high scholarships in the USA, UK, Canada, and Australia. Many partner universities offer admission pathways without IELTS or SAT requirements.
             </p>
+
             <div className="reveal reveal-delay-2 flex flex-wrap gap-4">
               <a
                 href={telegramLink('Hello! I would like to book a free consultation with Upnex.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shine rounded-full bg-blue-600 px-7 py-4 text-sm font-semibold transition hover:bg-blue-500"
+                className="btn-shine rounded-full bg-blue-600 px-7 py-4 text-sm font-semibold transition hover:bg-blue-500 shadow-lg shadow-blue-600/30"
               >
                 Book Free Consultation
               </a>
@@ -374,39 +441,40 @@ export default function App() {
                 Explore Universities
               </a>
             </div>
+
+            {/* Stats with animated counters */}
             <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
               {[
                 { stat: '500+', label: 'Students Guided' },
-                { stat: '80–100%', label: 'Scholarship Opportunities' },
+                { stat: '100%', label: 'Scholarship Opportunities' },
                 { stat: '4', label: 'Countries Covered' },
-                { stat: 'NY + UZ', label: 'International Team' },
+                { stat: '2', label: 'Offices: NY + UZ' },
               ].map(({ stat, label }, i) => (
-                <div key={label} className={`reveal reveal-delay-${i + 1} card-lift rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl`}>
-                  <h3 className="text-2xl font-bold">{stat}</h3>
-                  <p className="mt-2 text-sm text-slate-400">{label}</p>
-                </div>
+                <StatCounter key={label} stat={stat} label={label} index={i} />
               ))}
             </div>
           </div>
+
+          {/* Floating photo */}
           <div className="reveal-right float-anim overflow-hidden rounded-[36px] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
             <img src={oyatilloImage} alt="Oyatillo" className="h-[650px] w-full object-cover" />
           </div>
         </div>
       </section>
 
-      {/* COUNTRIES */}
+      {/* ── COUNTRIES ── */}
       <section id="about" className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12 text-center">
-          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Countries</p>
-          <h2 className="text-4xl font-bold">Study In Top Countries</h2>
-          <p className="mt-4 text-slate-400">Click any country to see full details and how UPNEX can help you.</p>
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400 label-animate">Countries</p>
+          <h2 className="reveal text-4xl font-bold">Study In Top Countries</h2>
+          <p className="reveal reveal-delay-1 mt-4 text-slate-400">Click any country to see full details and how UPNEX can help you.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {Object.entries(countryDetails).map(([name, data], i) => (
             <button
               key={name}
               onClick={() => setSelectedCountry(name)}
-              className={`reveal reveal-delay-${i + 1} card-lift rounded-[28px] border border-white/10 bg-white/5 p-8 text-left transition hover:border-blue-500/40 hover:bg-white/10 cursor-pointer`}
+              className={`reveal-scale reveal-delay-${i + 1} glow-card rounded-[28px] border border-white/10 bg-white/5 p-8 text-left cursor-pointer`}
             >
               <div className="mb-5 text-5xl">{data.flag}</div>
               <h3 className="text-2xl font-semibold">{name}</h3>
@@ -417,39 +485,29 @@ export default function App() {
         </div>
       </section>
 
-      {/* ABOUT UPNEX */}
+      {/* ── ABOUT UPNEX ── */}
       <section className="bg-slate-900/40 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">About Us</p>
-            <h2 className="text-4xl font-bold">Why Upnex Is Different</h2>
+            <h2 className="reveal text-4xl font-bold">Why Upnex Is Different</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-3 mb-12">
-            <div className="reveal reveal-delay-1 card-lift rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
-              <div className="mb-4 text-4xl">🏆</div>
-              <h3 className="text-xl font-bold mb-3">The Only Agency in the Valley</h3>
-              <p className="text-slate-400 leading-7 text-sm">
-                Upnex is one of the very few consulting agencies in Uzbekistan that gets students into US universities <span className="text-white font-medium">without any certificates</span> — no IELTS, no SAT required. For the USA, only a passport and school grades (attestat) are needed.
-              </p>
-            </div>
-            <div className="reveal reveal-delay-2 card-lift rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
-              <div className="mb-4 text-4xl">📄</div>
-              <h3 className="text-xl font-bold mb-3">Official Contract With Every Client</h3>
-              <p className="text-slate-400 leading-7 text-sm">
-                Upnex works with full transparency. Every new client signs an official contract before any work begins. We are accountable for every step — from application to visa — and you are protected throughout the process.
-              </p>
-            </div>
-            <div className="reveal reveal-delay-3 card-lift rounded-[28px] border border-white/10 bg-slate-950/70 p-8">
-              <div className="mb-4 text-4xl">📅</div>
-              <h3 className="text-xl font-bold mb-3">Founded August 19</h3>
-              <p className="text-slate-400 leading-7 text-sm">
-                Since its founding on August 19, Upnex has helped dozens of students successfully receive US student visas and begin studying abroad. We have offices in both <span className="text-white font-medium">Tashkent, Uzbekistan</span> and operate with a consultant based in <span className="text-white font-medium">New York, USA</span>.
-              </p>
-            </div>
+            {[
+              { icon: '🏆', title: 'The Only Agency in the Valley', body: 'Upnex is one of the very few consulting agencies in Uzbekistan that gets students into US universities without any certificates — no IELTS, no SAT required. For the USA, only a passport and school grades (attestat) are needed.', highlight: 'without any certificates' },
+              { icon: '📄', title: 'Official Contract With Every Client', body: 'Upnex works with full transparency. Every new client signs an official contract before any work begins. We are accountable for every step — from application to visa — and you are protected throughout the process.' },
+              { icon: '📅', title: 'Founded August 19', body: 'Since its founding on August 19, Upnex has helped dozens of students successfully receive US student visas and begin studying abroad. We have offices in both Tashkent, Uzbekistan and operate with a consultant based in New York, USA.' },
+            ].map(({ icon, title, body }, i) => (
+              <div key={title} className={`reveal reveal-delay-${i + 1} glow-card rounded-[28px] border border-white/10 bg-slate-950/70 p-8`}>
+                <div className="mb-4 text-4xl">{icon}</div>
+                <h3 className="text-xl font-bold mb-3">{title}</h3>
+                <p className="text-slate-400 leading-7 text-sm">{body}</p>
+              </div>
+            ))}
           </div>
 
           {/* Who can apply */}
-          <div className="rounded-[28px] border border-blue-500/20 bg-blue-500/5 p-8 lg:p-12">
+          <div className="reveal rounded-[28px] border border-blue-500/20 bg-blue-500/5 p-8 lg:p-12">
             <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Who Can Apply With Upnex?</h3>
@@ -480,7 +538,7 @@ export default function App() {
                   href={telegramLink('Hello! I want to start my application with Upnex. I have finished 11th grade.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full rounded-2xl bg-blue-600 py-4 text-center font-semibold transition hover:bg-blue-500"
+                  className="btn-shine block w-full rounded-2xl bg-blue-600 py-4 text-center font-semibold transition hover:bg-blue-500 shadow-lg shadow-blue-600/20"
                 >
                   Start My Application →
                 </a>
@@ -490,31 +548,24 @@ export default function App() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* ── SERVICES ── */}
       <section id="services" className="bg-slate-900/60 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Services</p>
-            <h2 className="text-4xl font-bold">Everything We Handle For You</h2>
-            <p className="mt-4 text-slate-400 max-w-xl mx-auto">From your first document to the moment you land — Upnex manages every step.</p>
+            <h2 className="reveal text-4xl font-bold">Everything We Handle For You</h2>
+            <p className="reveal reveal-delay-1 mt-4 text-slate-400 max-w-xl mx-auto">
+              From your first document to the moment you land — Upnex manages every step.
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              { icon: '🎓', name: 'University Admissions', desc: 'We find the right university for your GPA and budget, and manage the entire application process on your behalf.' },
-              { icon: '💰', name: 'Scholarship 80–100%', desc: 'We apply for merit scholarships covering 80% to 100% of tuition — without IELTS or SAT requirements.' },
-              { icon: '🛂', name: 'Visa Preparation', desc: 'Complete F-1 visa file preparation including DS-160, financial documents, and all embassy paperwork.' },
-              { icon: '🗣', name: 'Embassy Interview Coaching', desc: 'We coach every student for their English-language embassy interview so they walk in prepared and confident.' },
-              { icon: '✍️', name: 'Motivation Letter & Essays', desc: 'Our team writes professional motivation letters, personal statements, and essays that strengthen your application.' },
-              { icon: '📋', name: 'All Documents Covered', desc: 'Invitation letters, financial affidavits, transcript translations — we handle every document from start to finish.' },
-              { icon: '💼', name: 'Financial Management', desc: 'We guide students on proof-of-funds requirements and help prepare all financial documents for visa and enrollment.' },
-              { icon: '🤝', name: 'Post-Arrival Support', desc: 'Oyatillo personally meets students arriving in New York and supports them through their first days on campus.' },
-            ].map((service) => (
+            {SERVICES.map((service, i) => (
               <a
                 key={service.name}
                 href={telegramLink(`Hello! I need help with: ${service.name}`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-[28px] border border-white/10 bg-slate-950/70 p-6 transition hover:border-blue-500/40 hover:bg-slate-900 cursor-pointer"
+                className={`reveal-scale reveal-delay-${(i % 4) + 1} glow-card rounded-[28px] border border-white/10 bg-slate-950/70 p-6 cursor-pointer`}
               >
                 <div className="mb-4 text-3xl">{service.icon}</div>
                 <h3 className="text-lg font-semibold">{service.name}</h3>
@@ -526,20 +577,21 @@ export default function App() {
         </div>
       </section>
 
-      {/* TEAM */}
+      {/* ── TEAM ── */}
       <section id="team" className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-14 text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Meet The Team</p>
-          <h2 className="text-4xl font-bold">The People Behind Upnex</h2>
+          <h2 className="reveal text-4xl font-bold">The People Behind Upnex</h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
+          {/* Oyatillo */}
           <div className="reveal-left overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
             <img src={oyatilloImage} alt="Oyatillo" className="h-[420px] w-full object-cover object-top" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Oyatillo</h3>
               <p className="mt-2 text-blue-400">Co-Founder • USA Representative • New York</p>
               <p className="mt-5 leading-8 text-slate-300">
-                Oyatillo is Upnex's New York-based co-founder who personally handles all student documents — scholarship applications, university admissions, and visa files. Once students receive their visa, Oyatillo meets them in New York and supports them through arrival and their first days on campus. He also manages creative content and marketing from the USA.
+                Oyatillo is Upnex's New York-based co-founder who personally handles all student documents — scholarship applications, university admissions, and visa files. Once students receive their visa, Oyatillo meets them in New York and supports them through arrival and their first days on campus.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {['University Admissions', 'Scholarship Applications', 'Visa Documents', 'Student Arrival Support'].map((tag) => (
@@ -556,13 +608,15 @@ export default function App() {
               </a>
             </div>
           </div>
+
+          {/* Nurislom */}
           <div className="reveal-right overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/60">
             <img src={nurislomImage} alt="Nurislom" className="h-[420px] w-full object-cover object-top" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Nurislom</h3>
               <p className="mt-2 text-blue-400">Co-Founder • Uzbekistan Director • Tashkent</p>
               <p className="mt-5 leading-8 text-slate-300">
-                Nurislom is Upnex's co-founder and runs all operations from the Tashkent office. He meets every new client, signs official contracts, and manages the full Uzbekistan side — visa preparation, financial document management, embassy interview coaching, office content, and all additional student services. He is the first point of contact for students in Uzbekistan.
+                Nurislom is Upnex's co-founder and runs all operations from the Tashkent office. He meets every new client, signs official contracts, and manages the full Uzbekistan side — visa preparation, financial document management, embassy interview coaching, and all additional student services.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {['Client Contracts', 'Visa Coaching', 'Financial Docs', 'Office Management', 'Student Services'].map((tag) => (
@@ -582,21 +636,22 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── UNIVERSITIES ── */}
       <UniversitiesSection universities={universitiesData} />
 
-      {/* CONTACT */}
+      {/* ── CONTACT ── */}
       <section id="contact" className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12 text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Contact</p>
-          <h2 className="text-4xl font-bold">Get In Touch</h2>
-          <p className="mt-4 text-slate-400">Ready to start your journey? We're here to help.</p>
+          <h2 className="reveal text-4xl font-bold">Get In Touch</h2>
+          <p className="reveal reveal-delay-1 mt-4 text-slate-400">Ready to start your journey? We're here to help.</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-3">
           <a
             href={TELEGRAM}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-[28px] border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-2 hover:border-blue-400/40 hover:bg-white/10"
+            className="reveal-scale reveal-delay-1 glow-card rounded-[28px] border border-white/10 bg-white/5 p-8 text-center"
           >
             <div className="mb-4 text-5xl">✈️</div>
             <h3 className="text-xl font-semibold">Telegram</h3>
@@ -607,7 +662,7 @@ export default function App() {
             href="https://instagram.com/upnex.uz"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-[28px] border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-2 hover:border-pink-500/40 hover:bg-white/10"
+            className="reveal-scale reveal-delay-2 glow-card rounded-[28px] border border-white/10 bg-white/5 p-8 text-center"
           >
             <div className="mb-4 text-5xl">📸</div>
             <h3 className="text-xl font-semibold">Instagram</h3>
@@ -618,7 +673,7 @@ export default function App() {
             href={telegramLink('Hello! I would like a free consultation from Upnex.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-[28px] border border-blue-600/30 bg-blue-600/10 p-8 text-center transition hover:-translate-y-2 hover:border-blue-500/60 hover:bg-blue-600/20"
+            className="reveal-scale reveal-delay-3 glow-card btn-shine rounded-[28px] border border-blue-600/30 bg-blue-600/10 p-8 text-center"
           >
             <div className="mb-4 text-5xl">🎓</div>
             <h3 className="text-xl font-semibold">Free Consultation</h3>
@@ -628,9 +683,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ── FOOTER ── */}
       <footer className="border-t border-white/10 py-10 text-center text-sm text-slate-500">
-        <p>© 2025 Upnex Consulting. All rights reserved.</p>
+        <p className="shimmer-text inline-block font-semibold">© 2025 Upnex Consulting</p>
         <p className="mt-2">New York, USA • Tashkent, Uzbekistan</p>
       </footer>
     </div>

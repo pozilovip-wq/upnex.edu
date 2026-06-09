@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 export function useReveal() {
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
 
     const observer = new IntersectionObserver(
       (entries) => {
