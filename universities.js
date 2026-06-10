@@ -23,7 +23,7 @@ const universitiesData = [
     ielts: "IELTS 6.0 or Duolingo 105",
     intakes: "September, January",
     programs: ["Finance", "Marketing", "Nursing", "Computer Science", "Law"],
-    tag: "NYC",
+    tag: "Business",
     website: "https://www.pace.edu",
     details: "Pace University is located in the heart of New York City with campuses in Manhattan and Westchester. It offers strong programs in business, finance, and nursing with direct access to NYC's top employers and internship opportunities. International students benefit from a dedicated Office of International Students and an active global student community."
   },
@@ -37,7 +37,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Business Administration", "Criminal Justice", "Computer Science", "Hospitality", "Healthcare"],
     tag: "Fast Admissions",
-    website: "https://www.monroecollege.edu"
+    website: "https://www.monroecollege.edu",
+    details: "Monroe University is a career-focused institution in the Bronx offering one of the fastest admission processes in the US — no IELTS or TOEFL required, just an on-campus English placement test. With three intake dates per year and very affordable tuition, it is a top choice for Uzbek students seeking quick entry into a US degree program. The university has strong ties to New York employers in business, healthcare, and hospitality."
   },
   {
     name: "University of Bridgeport",
@@ -49,7 +50,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Computer Science", "Dental Hygiene", "Design"],
     tag: "Scholarship",
-    website: "https://www.bridgeport.edu"
+    website: "https://www.bridgeport.edu",
+    details: "The University of Bridgeport is a diverse private university in coastal Connecticut, just 90 minutes from New York City. It is well known for its engineering, computer science, and dental hygiene programs, and offers generous merit scholarships of up to $18,000 per year to qualified international students. The university has a large international student population and provides strong English language support services."
   },
   {
     name: "Mercy University",
@@ -61,7 +63,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Nursing", "Business", "Education", "Psychology", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.mercy.edu"
+    website: "https://www.mercy.edu",
+    details: "Mercy University is a leading nursing and health sciences institution located in the scenic Hudson Valley just outside New York City. The university is consistently ranked among the best in the northeast for nursing education, and its business and education programs are equally strong. With scholarships of up to $15,000 and multiple campus locations, it offers excellent value for international students seeking a New York-area education."
   },
   {
     name: "CUNY Brooklyn College",
@@ -73,7 +76,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Computer Science", "Film", "Psychology", "Biology"],
     tag: "Affordable",
-    website: "https://www.brooklyn.cuny.edu"
+    website: "https://www.brooklyn.cuny.edu",
+    details: "CUNY Brooklyn College is one of the most affordable pathways to a US university degree, with tuition as low as $7,000 per year for international students. Located in Brooklyn, New York, it offers strong programs in business, computer science, film, and psychology with access to the entire New York City job market. The CUNY system is highly respected and provides a genuine Ivy-quality education at a fraction of the cost."
   },
   {
     name: "Adelphi University",
@@ -85,7 +89,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Nursing", "Business", "Social Work", "Education", "Psychology"],
     tag: "Scholarship",
-    website: "https://www.adelphi.edu"
+    website: "https://www.adelphi.edu",
+    details: "Adelphi University is a highly regarded private university on Long Island, New York, known especially for its top-ranked nursing and social work programs. The university offers merit scholarships of up to $22,000 per year and accepts Duolingo alongside IELTS, making it very accessible for Uzbek students. Its location 45 minutes from Manhattan gives students full access to New York City's internship and career opportunities."
   },
   {
     name: "Long Island University",
@@ -96,8 +101,9 @@ const universitiesData = [
     ielts: "IELTS 6.0",
     intakes: "September, January",
     programs: ["Pharmacy", "Business", "Health Sciences", "Education", "Computer Science"],
-    tag: "NYC",
-    website: "https://www.liu.edu"
+    tag: "Health",
+    website: "https://www.liu.edu",
+    details: "Long Island University's Brooklyn campus places students in the heart of New York City with access to world-class pharmacy, health sciences, and business programs. LIU is renowned for its Doctor of Pharmacy program and strong health sciences curriculum, and offers generous merit scholarships for international students. The university's location in Brooklyn provides outstanding networking and internship opportunities across every industry."
   },
   {
     name: "St. John's University",
@@ -108,8 +114,9 @@ const universitiesData = [
     ielts: "IELTS 6.5",
     intakes: "September, January",
     programs: ["Business", "Pharmacy", "Law", "Education", "Computer Science"],
-    tag: "NYC",
-    website: "https://www.stjohns.edu"
+    tag: "Business",
+    website: "https://www.stjohns.edu",
+    details: "St. John's University is a prestigious Catholic research university with its main campus in Queens, New York. It is especially well-known for its Pharmacy, Business, and Law programs, and has a large and active international student community. Scholarships of up to $25,000 per year make it competitive for merit-based applicants, and the New York City location opens doors to internships at top global firms."
   },
   {
     name: "Fordham University",
@@ -121,7 +128,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Law", "Social Work", "Communications", "Psychology"],
     tag: "Top Ranked",
-    website: "https://www.fordham.edu"
+    website: "https://www.fordham.edu",
+    details: "Fordham University is a prestigious Jesuit research university located in New York City, consistently ranked among the top universities in the northeast. It is nationally recognized for its Gabelli School of Business, Law School, and strong social sciences programs. With campuses in the Bronx and Manhattan, students have unmatched access to Wall Street, media companies, and global nonprofits for internships and careers."
   },
   {
     name: "Hofstra University",
@@ -133,7 +141,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Law", "Engineering", "Education", "Health Sciences"],
     tag: "Scholarship",
-    website: "https://www.hofstra.edu"
+    website: "https://www.hofstra.edu",
+    details: "Hofstra University is a dynamic private research university on Long Island, home to a highly ranked Law School, School of Business, and programs in engineering and health sciences. The university offers generous merit scholarships of up to $24,000 per year and boasts a beautiful 240-acre campus just 25 miles from Midtown Manhattan. Its strong alumni network spans finance, law, media, and healthcare industries."
   },
   {
     name: "Manhattanville University",
@@ -145,7 +154,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Education", "Sport Management", "Arts", "Psychology"],
     tag: "Affordable",
-    website: "https://www.mville.edu"
+    website: "https://www.mville.edu",
+    details: "Manhattanville University is a small private liberal arts university set on a beautiful 100-acre campus in Purchase, New York, just 30 miles from Midtown Manhattan. The university is known for its personalized attention with small class sizes, strong Education and Sport Management programs, and an inclusive international community. Merit scholarships of up to $20,000 and Duolingo acceptance make it very approachable for Uzbek students."
   },
   {
     name: "Sacred Heart University",
@@ -157,7 +167,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Nursing", "Business", "Physical Therapy", "Communication", "Computer Science"],
     tag: "Health",
-    website: "https://www.sacredheart.edu"
+    website: "https://www.sacredheart.edu",
+    details: "Sacred Heart University is a leading Catholic university in Fairfield, Connecticut, renowned for its top-ranked nursing and health sciences programs, including a highly respected Doctor of Physical Therapy. The university has experienced rapid growth and now boasts state-of-the-art facilities, a vibrant campus life, and strong placement rates for nursing graduates. Its location between New York City and Boston provides excellent internship and career access for international students."
   },
   {
     name: "Fairleigh Dickinson University",
@@ -169,7 +180,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Hospitality", "Psychology", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.fdu.edu"
+    website: "https://www.fdu.edu",
+    details: "Fairleigh Dickinson University is a multi-campus university in New Jersey with an established reputation in business, engineering, and hospitality management. FDU also has a campus in Vancouver, Canada, offering students the unique option to study across two countries. With affordable tuition and scholarships up to $18,000 per year, it is one of the most budget-friendly options for Uzbek students wanting a New York metro-area education."
   },
   {
     name: "Rutgers University",
@@ -181,7 +193,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Law", "Engineering", "Nursing", "Public Affairs"],
     tag: "Top Ranked",
-    website: "https://www.rutgers.edu"
+    website: "https://www.rutgers.edu",
+    details: "Rutgers University–Newark is a top-ranked public research university and one of the most ethnically diverse universities in the United States. It excels in business, law, nursing, and public affairs, and is part of the prestigious Rutgers University system. Located in Newark, New Jersey — minutes from Manhattan — international students benefit from its world-class research facilities, a robust alumni network, and lower tuition compared to many private universities."
   },
   {
     name: "New Jersey City University",
@@ -193,7 +206,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Education", "Nursing", "Criminal Justice", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.njcu.edu"
+    website: "https://www.njcu.edu",
+    details: "New Jersey City University is one of the most affordable four-year universities in the New York metropolitan area, with tuition starting from just $12,000 per year for international students. Situated in Jersey City directly across from Lower Manhattan, it offers strong programs in business, nursing, education, and criminal justice with direct access to New York City's career opportunities. The university has a highly diverse student body and a welcoming environment for international students."
   },
   {
     name: "American University",
@@ -205,7 +219,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["International Relations", "Business", "Law", "Communications", "Political Science"],
     tag: "Top Ranked",
-    website: "https://www.american.edu"
+    website: "https://www.american.edu",
+    details: "American University in Washington D.C. is a world-renowned institution for international relations, political science, and law, located just steps from the US Capitol and major government agencies. It is consistently ranked among the top universities for political science and international studies, making it an ideal choice for students interested in diplomacy, global affairs, and public policy. Scholarships of up to $30,000 per year are available for high-achieving international students."
   },
   {
     name: "George Mason University",
@@ -217,7 +232,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Computer Science", "Engineering", "Business", "Public Policy", "Cybersecurity"],
     tag: "Technology",
-    website: "https://www.gmu.edu"
+    website: "https://www.gmu.edu",
+    details: "George Mason University is Virginia's largest public research university, ranked #1 in the US for cybersecurity education and recognized for its cutting-edge computer science, engineering, and public policy programs. Located in the Washington D.C. metro area, students have unparalleled access to federal agencies, defense contractors, and tech companies for internships and employment. The university has a large and vibrant international student community and strong student support services."
   },
   {
     name: "University of New Haven",
@@ -229,7 +245,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Criminal Justice", "Engineering", "Business", "Forensic Science", "Computer Science"],
     tag: "Scholarship",
-    website: "https://www.newhaven.edu"
+    website: "https://www.newhaven.edu",
+    details: "The University of New Haven is nationally recognized as a leader in criminal justice, forensic science, and engineering, and has been called one of the best universities for cybersecurity in the US. Located in coastal Connecticut between New York City and Boston, its Henry C. Lee College of Criminal Justice is one of the best in the world, attracting students interested in law enforcement, forensics, and national security. Merit scholarships of up to $20,000 per year are available for international students."
   },
   {
     name: "Quinnipiac University",
@@ -241,7 +258,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Nursing", "Business", "Journalism", "Health Sciences", "Law"],
     tag: "Health",
-    website: "https://www.qu.edu"
+    website: "https://www.qu.edu",
+    details: "Quinnipiac University is a highly respected private university in Connecticut renowned for its nursing, health sciences, journalism, and law programs. The Frank H. Netter MD School of Medicine and outstanding nursing program attract students who want a career in healthcare, while the School of Communications consistently ranks among the top journalism programs in the US. Located between New York City and Boston, graduates benefit from strong employer connections and internship opportunities."
   },
   {
     name: "Western New England University",
@@ -253,7 +271,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Law", "Pharmacy", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.wne.edu"
+    website: "https://www.wne.edu",
+    details: "Western New England University is a respected private university in Springfield, Massachusetts, offering strong programs in engineering, business, law, and pharmacy at more affordable tuition rates than many comparable institutions. The engineering and law schools are particularly well-regarded, and the university maintains close partnerships with regional employers for co-op and internship placements. Scholarships of up to $20,000 per year are available, making it an excellent value for international students."
   },
   {
     name: "Suffolk University",
@@ -265,7 +284,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Law", "Communications", "Public Administration", "Finance"],
     tag: "Business",
-    website: "https://www.suffolk.edu"
+    website: "https://www.suffolk.edu",
+    details: "Suffolk University is a downtown Boston institution ideally located in the heart of the city's financial and legal district, making it a prime choice for business, law, and communications students. The Sawyer Business School offers excellent finance and management programs with direct connections to Boston's booming financial sector. International students thrive here due to the active international student office, strong alumni network, and unbeatable city-center location."
   },
   {
     name: "Northeastern University",
@@ -277,7 +297,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Computer Science", "Engineering", "Business", "Health Sciences", "Law"],
     tag: "Top Ranked",
-    website: "https://www.northeastern.edu"
+    website: "https://www.northeastern.edu",
+    details: "Northeastern University is one of the top-ranked universities in the United States and a global leader in experiential learning through its renowned co-op program, which places students in paid work positions at top companies around the world. Located in Boston, it excels in computer science, engineering, business, and health sciences, and its graduates are among the most sought-after in the US job market. The university has a large and active international student network spanning over 140 countries."
   },
   {
     name: "University of Massachusetts Boston",
@@ -289,7 +310,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Computer Science", "Nursing", "Psychology", "Engineering"],
     tag: "Affordable",
-    website: "https://www.umb.edu"
+    website: "https://www.umb.edu",
+    details: "UMass Boston is the only public research university in the city of Boston, offering high-quality education at significantly lower costs than Boston's private universities. Located on the waterfront, it provides strong programs in business, computer science, nursing, and psychology, backed by the reputation of the University of Massachusetts system. International students benefit from a vibrant multicultural campus, strong academic support, and direct access to Boston's world-class job market."
   },
   {
     name: "Clark University",
@@ -301,7 +323,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Psychology", "Business", "Geography", "International Development", "Computer Science"],
     tag: "Research",
-    website: "https://www.clarku.edu"
+    website: "https://www.clarku.edu",
+    details: "Clark University is a prestigious research university in Worcester, Massachusetts, and one of only 40 universities in the US with a Phi Beta Kappa chapter and a chapter of the National Academy of Sciences. It is globally recognized for psychology, geography, and international development, and offers a unique free fifth year of study for all undergraduates. Scholarships of up to $25,000 and a close-knit international community make Clark an outstanding choice for ambitious Uzbek students."
   },
   {
     name: "University of Illinois Chicago",
@@ -313,7 +336,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Health Sciences", "Architecture", "Computer Science"],
     tag: "Technology",
-    website: "https://www.uic.edu"
+    website: "https://www.uic.edu",
+    details: "The University of Illinois Chicago is a top public research university and the largest university in the Chicago metropolitan area, offering strong programs in engineering, business, health sciences, architecture, and computer science. As part of the prestigious University of Illinois system, it provides access to cutting-edge research facilities and strong industry connections in one of the world's great cities. International students benefit from Chicago's diverse economy with opportunities in tech, finance, healthcare, and manufacturing."
   },
   {
     name: "DePaul University",
@@ -325,7 +349,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Computer Science", "Law", "Education", "Communications"],
     tag: "Business",
-    website: "https://www.depaul.edu"
+    website: "https://www.depaul.edu",
+    details: "DePaul University is the largest Catholic university in the United States, located in Chicago's vibrant Lincoln Park and Loop neighborhoods. It is nationally recognized for its Kellstadt Graduate School of Business, strong computer science programs, and law school, with outstanding internship connections throughout Chicago's corporate sector. The university's central Chicago location and flexible program offerings make it a popular choice for international students seeking an urban business education."
   },
   {
     name: "Loyola University Chicago",
@@ -337,7 +362,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Nursing", "Law", "Social Work", "Psychology"],
     tag: "Top Ranked",
-    website: "https://www.luc.edu"
+    website: "https://www.luc.edu",
+    details: "Loyola University Chicago is a top-ranked Jesuit research university on Lake Michigan's shores, nationally recognized for nursing, business, law, and social sciences. The Quinlan School of Business and the Stritch School of Medicine are among the most respected in the midwest, and the lakefront campus is considered one of the most beautiful in the US. With scholarships up to $22,000 and a strong Jesuit tradition of supporting international students, it is a superb choice for Uzbek students."
   },
   {
     name: "University of Houston",
@@ -349,7 +375,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Engineering", "Business", "Law", "Architecture", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.uh.edu"
+    website: "https://www.uh.edu",
+    details: "The University of Houston is a major public research university in the fourth-largest US city, offering excellent programs in engineering, business, law, and architecture at very affordable international tuition rates. The Bauer College of Business and Cullen College of Engineering have strong reputations and deep ties to Houston's energy, aerospace, and healthcare industries. Three intake dates per year and a very large, diverse international student community make it extremely accessible for Uzbek students."
   },
   {
     name: "Texas Southern University",
@@ -361,7 +388,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Law", "Pharmacy", "Engineering", "Education"],
     tag: "Affordable",
-    website: "https://www.tsu.edu"
+    website: "https://www.tsu.edu",
+    details: "Texas Southern University is one of the most affordable universities in the United States, with tuition starting from just $10,000 per year for international students. Located in Houston, Texas, it offers solid programs in business, law, pharmacy, and engineering, and is recognized for providing pathways to higher education for first-generation and international students. The low tuition combined with scholarship opportunities of up to $8,000 makes it an excellent entry point into the US education system."
   },
   {
     name: "University of North Texas",
@@ -373,7 +401,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Music", "Computer Science", "Engineering", "Psychology"],
     tag: "Affordable",
-    website: "https://www.unt.edu"
+    website: "https://www.unt.edu",
+    details: "The University of North Texas in Denton is a large public research university nationally celebrated for its College of Music — one of the top music schools in the US — alongside strong programs in business, computer science, and engineering. With affordable tuition from $18,000 per year and a welcoming campus culture, it is a popular destination for creative and tech-oriented international students. Located in the Dallas-Fort Worth metroplex, graduates have access to one of the fastest-growing job markets in America."
   },
   {
     name: "University of Arizona",
@@ -385,7 +414,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Astronomy", "Computer Science", "Public Health"],
     tag: "Research",
-    website: "https://www.arizona.edu"
+    website: "https://www.arizona.edu",
+    details: "The University of Arizona is a flagship R1 research university in Tucson, home to one of the world's leading astronomy and space sciences programs at Steward Observatory, as well as highly ranked engineering, business, and public health schools. As a member of the Association of American Universities, it offers cutting-edge research opportunities and strong OPT/STEM extension options for international graduates. Scholarships of up to $15,000 per year are available and the sunny Arizona climate is a bonus for students from Central Asia."
   },
   {
     name: "Arizona State University",
@@ -397,7 +427,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Computer Science", "Journalism", "Design"],
     tag: "Top Ranked",
-    website: "https://www.asu.edu"
+    website: "https://www.asu.edu",
+    details: "Arizona State University is the largest public university in the United States by enrollment and consistently ranked among the most innovative universities in the world by US News & World Report. ASU offers over 800 degree programs with particular strength in engineering, business, computer science, and sustainability, and its massive online program allows flexible study options. With merit scholarships up to $12,000, Duolingo acceptance, and two intake dates, it is one of the most accessible top-ranked US universities for Uzbek students."
   },
   {
     name: "University of Nevada Las Vegas",
@@ -409,7 +440,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Hospitality", "Business", "Engineering", "Health Sciences", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.unlv.edu"
+    website: "https://www.unlv.edu",
+    details: "The University of Nevada Las Vegas is a dynamic research university in one of the world's most exciting cities, renowned globally for its Hospitality Management program — widely considered one of the top hotel and casino management schools in the world. Beyond hospitality, UNLV offers strong programs in engineering, business, health sciences, and computer science. Affordable tuition, a warm desert climate, and Las Vegas's massive tourism and entertainment industry provide unmatched internship and employment opportunities."
   },
   {
     name: "San Francisco State University",
@@ -421,7 +453,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Computer Science", "Arts", "Education"],
     tag: "Affordable",
-    website: "https://www.sfsu.edu"
+    website: "https://www.sfsu.edu",
+    details: "San Francisco State University is a public university located in one of the world's most innovative cities, offering strong programs in business, engineering, computer science, and the arts at very affordable public university rates. SFSU's location in Silicon Valley's backyard gives students extraordinary access to tech companies, startups, and creative industries. The university has a vibrant international student community and provides robust career services connecting students to the Bay Area's booming economy."
   },
   {
     name: "California State University Los Angeles",
@@ -433,7 +466,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Computer Science", "Education", "Health Sciences"],
     tag: "Affordable",
-    website: "https://www.calstatela.edu"
+    website: "https://www.calstatela.edu",
+    details: "California State University Los Angeles is one of the most affordable pathways into the Los Angeles job market, offering high-quality programs in business, engineering, computer science, education, and health sciences as part of the prestigious CSU system. Located in East Los Angeles, it is one of the most ethnically diverse universities in the US and has a strong tradition of supporting first-generation and international students. The LA location provides access to entertainment, tech, healthcare, and finance industries."
   },
   {
     name: "University of Oregon",
@@ -445,7 +479,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Business", "Journalism", "Architecture", "Psychology", "Computer Science"],
     tag: "Research",
-    website: "https://www.uoregon.edu"
+    website: "https://www.uoregon.edu",
+    details: "The University of Oregon is a flagship public research university in the Pacific Northwest, nationally ranked for its Lundquist College of Business, School of Journalism, and architecture programs. Set in the charming college town of Eugene, UO offers a beautiful campus environment with strong research opportunities and a well-established network in the Pacific Northwest's growing tech and outdoor industries. Scholarships of up to $14,000 per year are available for meritorious international students."
   },
   {
     name: "Portland State University",
@@ -457,7 +492,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Urban Planning", "Computer Science", "Education"],
     tag: "Affordable",
-    website: "https://www.pdx.edu"
+    website: "https://www.pdx.edu",
+    details: "Portland State University is Oregon's urban university, situated in the heart of downtown Portland — one of America's most livable and innovative cities. PSU is known for its strong engineering, business, urban planning, and computer science programs, with exceptional community partnerships and internship connections throughout Portland's growing tech and sustainability sectors. Two intake dates, affordable tuition from $22,000, and a welcoming diverse campus culture make it an excellent choice for international students."
   },
   {
     name: "Wayne State University",
@@ -469,7 +505,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Medicine", "Law", "Computer Science"],
     tag: "Research",
-    website: "https://www.wayne.edu"
+    website: "https://www.wayne.edu",
+    details: "Wayne State University is a major public research university in the heart of Detroit, Michigan, with a School of Medicine ranked among the top producers of medical professionals in the US. The university excels in engineering, biomedical sciences, business, law, and pharmacy, with strong research funding and industry partnerships in automotive, healthcare, and technology. Affordable tuition from $18,000 per year and a large, diverse international student body make Wayne State an outstanding research university option."
   },
   {
     name: "Bowling Green State University",
@@ -481,7 +518,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Education", "Computer Science", "Arts", "Psychology"],
     tag: "Affordable",
-    website: "https://www.bgsu.edu"
+    website: "https://www.bgsu.edu",
+    details: "Bowling Green State University is a welcoming public university in Ohio known for its strong programs in business, education, computer science, and the arts, with particularly notable programs in music and film. BGSU offers scholarships of up to $10,000 per year and maintains a very supportive international student services office with programs specifically designed to help students from Central Asia and Eastern Europe adapt to life in the US. Its safe, friendly college-town environment makes it an ideal setting for international students."
   },
 
   // ==================== UK (40) ====================
@@ -495,7 +533,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Computer Science", "Pharmacy", "Law"],
     tag: "Affordable",
-    website: "https://www.herts.ac.uk"
+    website: "https://www.herts.ac.uk",
+    details: "The University of Hertfordshire is a modern university located in Hatfield, just 20 minutes from Central London by train, making it one of the most accessible London-area universities for international students. It is particularly strong in engineering, computer science, pharmacy, and business, with excellent industry partnerships including a dedicated aerospace and aviation engineering campus. Affordable tuition, generous scholarships, and a large Central Asian student community make it a very popular choice for Uzbek students."
   },
   {
     name: "University of Chester",
@@ -507,7 +546,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Nursing", "Education", "Psychology", "Sports Science"],
     tag: "Affordable",
-    website: "https://www.chester.ac.uk"
+    website: "https://www.chester.ac.uk",
+    details: "The University of Chester is one of the oldest higher education institutions in England, located in the beautiful historic city of Chester. It offers high-quality programs in nursing, business, psychology, and sports science at some of the most affordable tuition rates in the UK. The university has a strong support network for international students, an active student union, and excellent NHS-connected nursing placements that make its health programs particularly valuable."
   },
   {
     name: "De Montfort University",
@@ -519,7 +559,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Fashion", "Engineering", "Law", "Business", "Computer Science"],
     tag: "Arts",
-    website: "https://www.dmu.ac.uk"
+    website: "https://www.dmu.ac.uk",
+    details: "De Montfort University in Leicester is internationally renowned for its fashion, arts, and design programs — its fashion course is ranked among the top in the UK — alongside strong law, engineering, and computer science offerings. The university has a bold commitment to social impact and is Carbon Neutral certified, making it a leader in sustainable campus practices. With scholarships up to £4,000 and an active international student community, DMU provides an inspiring environment for creative and professional students alike."
   },
   {
     name: "University of East London",
@@ -531,7 +572,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Psychology", "Architecture", "Health Sciences", "Education"],
     tag: "Scholarship",
-    website: "https://www.uel.ac.uk"
+    website: "https://www.uel.ac.uk",
+    details: "The University of East London is a diverse London university located in the Royal Docks area — one of London's most exciting regeneration zones — offering strong programs in psychology, business, architecture, and health sciences. UEL is ranked highly for social mobility and provides outstanding scholarships of up to £5,000 per year for international students. Its London location means direct access to the UK's leading employers, internship opportunities, and one of the world's most dynamic city environments."
   },
   {
     name: "Middlesex University",
@@ -543,7 +585,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Law", "Arts & Design", "Health", "Engineering"],
     tag: "Affordable",
-    website: "https://www.mdx.ac.uk"
+    website: "https://www.mdx.ac.uk",
+    details: "Middlesex University London is a global university with campuses in Dubai and Mauritius in addition to its North London campus, offering students a truly international perspective. It has strong programs in business, law, arts and design, health, and engineering, and is recognized for its inclusive approach and strong support for international students. The university's global network of campuses and industry partnerships provides graduates with worldwide career opportunities."
   },
   {
     name: "London South Bank University",
@@ -555,7 +598,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Nursing", "Business", "Architecture", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.lsbu.ac.uk"
+    website: "https://www.lsbu.ac.uk",
+    details: "London South Bank University is a practically-focused university located in the heart of South London, highly regarded for engineering, nursing, architecture, and computer science programs with strong links to London's professional and healthcare sectors. LSBU has one of the highest graduate employment rates among London universities and its nursing graduates are in high demand across the NHS. The central London location and affordable tuition make it one of the best value London universities for international students."
   },
   {
     name: "Anglia Ruskin University",
@@ -567,7 +611,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Nursing", "Computer Science", "Law", "Psychology"],
     tag: "Affordable",
-    website: "https://www.aru.ac.uk"
+    website: "https://www.aru.ac.uk",
+    details: "Anglia Ruskin University has campuses in Cambridge and Chelmsford, giving students the unique opportunity to study in the city of Cambridge — home to the world-famous Cambridge University — at a fraction of the cost. ARU is known for its nursing, business, and computer science programs and has one of the lowest IELTS requirements in the UK (5.5), making it very accessible for Uzbek students. Scholarships of up to £3,500 per year and a welcoming international community make it a great starting point for a UK education."
   },
   {
     name: "Coventry University",
@@ -579,7 +624,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Health", "Computing", "Architecture"],
     tag: "Technology",
-    website: "https://www.coventry.ac.uk"
+    website: "https://www.coventry.ac.uk",
+    details: "Coventry University is one of the UK's most dynamic modern universities and consistently ranks among the top modern universities nationally for student satisfaction and graduate employment. It is particularly strong in engineering, automotive design, business, and health sciences, with state-of-the-art facilities including the Engineering and Computing Building. The university has a large international student population and a dedicated Coventry University London campus for students who want a city-centre experience."
   },
   {
     name: "University of Wolverhampton",
@@ -591,7 +637,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Nursing", "Computer Science", "Education"],
     tag: "Affordable",
-    website: "https://www.wlv.ac.uk"
+    website: "https://www.wlv.ac.uk",
+    details: "The University of Wolverhampton is a teaching-focused university in the West Midlands offering some of the most affordable tuition in the UK. It has strong programs in business, engineering, nursing, and computer science with good NHS partnerships for health students. The university's welcoming environment and dedicated international student support team make it a comfortable and affordable option for Uzbek students beginning their UK education journey."
   },
   {
     name: "University of Sunderland",
@@ -603,7 +650,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Pharmacy", "Computing", "Health Sciences", "Engineering"],
     tag: "Affordable",
-    website: "https://www.sunderland.ac.uk"
+    website: "https://www.sunderland.ac.uk",
+    details: "The University of Sunderland offers some of the most affordable tuition in the UK alongside a surprisingly strong reputation in pharmacy, health sciences, and business. Located in Northeast England with a campus also in London, it provides flexible study options for international students. The university's IELTS 5.5 requirement and low tuition from £11,500 make it one of the most accessible UK universities for students from Central Asia."
   },
   {
     name: "Teesside University",
@@ -615,7 +663,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Computer Science", "Engineering", "Business", "Health", "Arts"],
     tag: "Technology",
-    website: "https://www.tees.ac.uk"
+    website: "https://www.tees.ac.uk",
+    details: "Teesside University is a technology and innovation-focused university in Middlesbrough recognized as a UK University of the Year by multiple publications. It has excellent computer science, engineering, and digital media programs underpinned by its National Horizons Centre for biosciences and STEM enterprise zones. Affordable tuition from £12,000 and strong industry partnerships with the region's manufacturing and digital sectors give graduates impressive employment prospects."
   },
   {
     name: "University of Lincoln",
@@ -627,7 +676,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Engineering", "Business", "Arts", "Computer Science", "Law"],
     tag: "Research",
-    website: "https://www.lincoln.ac.uk"
+    website: "https://www.lincoln.ac.uk",
+    details: "The University of Lincoln is a rapidly rising institution set in one of England's most historic and beautiful cathedral cities. It has earned a strong reputation for engineering, arts, computer science, and law, and is consistently recognised for outstanding student satisfaction. The university benefits from a £300 million campus redevelopment, strong industry partnerships in the Midlands, and a small-city setting that gives international students a truly immersive UK experience."
   },
   {
     name: "Northumbria University",
@@ -639,7 +689,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Law", "Business", "Architecture", "Engineering", "Computer Science"],
     tag: "Scholarship",
-    website: "https://www.northumbria.ac.uk"
+    website: "https://www.northumbria.ac.uk",
+    details: "Northumbria University in Newcastle is a large, forward-looking university consistently ranked among the UK's top modern institutions for law, architecture, engineering, and computer science. It offers scholarships of up to £4,000 per year and has a strong focus on employability, with one of the highest graduate employment rates among UK universities. Newcastle is a vibrant, affordable student city and Northumbria's dedicated international student support makes transitioning to UK life straightforward for Uzbek students."
   },
   {
     name: "University of Huddersfield",
@@ -651,7 +702,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Music", "Computer Science", "Pharmacy"],
     tag: "Affordable",
-    website: "https://www.hud.ac.uk"
+    website: "https://www.hud.ac.uk",
+    details: "The University of Huddersfield has been named University of the Year by The Times/The Sunday Times and is particularly celebrated for its engineering, music technology, and pharmacy programs. The university has a uniquely high proportion of staff with professional doctorates, ensuring students learn from real industry practitioners. Located in Yorkshire with affordable living costs and strong NHS connections for pharmacy and health students, Huddersfield offers exceptional quality and value."
   },
   {
     name: "University of Bolton",
@@ -663,7 +715,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Education", "Computing", "Health"],
     tag: "Affordable",
-    website: "https://www.bolton.ac.uk"
+    website: "https://www.bolton.ac.uk",
+    details: "The University of Bolton offers some of the lowest tuition fees in the entire UK — starting from just £11,000 per year — while maintaining solid programs in engineering, business, computing, education, and health. Located in Greater Manchester, students benefit from proximity to one of the UK's most vibrant cities and its massive job market. The low IELTS requirement (5.5) and friendly campus atmosphere make Bolton an excellent entry point for Uzbek students new to UK education."
   },
   {
     name: "University of Central Lancashire",
@@ -675,7 +728,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Journalism", "Nursing", "Business", "Engineering", "Law"],
     tag: "Affordable",
-    website: "https://www.uclan.ac.uk"
+    website: "https://www.uclan.ac.uk",
+    details: "The University of Central Lancashire (UCLan) is a large, comprehensive university in Preston with strong programs in journalism, nursing, law, and engineering, and notable satellite campuses in Cyprus and Sri Lanka. UCLan is one of the UK's most internationally diverse universities and has a long track record of welcoming students from Uzbekistan and Central Asia. Affordable tuition, a lively campus community, and dedicated international student advisors make UCLan a welcoming and practical choice."
   },
   {
     name: "Sheffield Hallam University",
@@ -687,7 +741,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Health", "Arts", "Computer Science"],
     tag: "Scholarship",
-    website: "https://www.shu.ac.uk"
+    website: "https://www.shu.ac.uk",
+    details: "Sheffield Hallam University is a large, employment-focused university in Sheffield recognized for its outstanding business, health, engineering, and arts programs with one of the UK's strongest records for graduate employability. The university has extensive industry partnerships across Yorkshire and the North of England, ensuring students gain practical experience through placements and live projects. Scholarships of up to £3,500, two intake dates, and a relatively affordable city make Sheffield Hallam excellent value for international students."
   },
   {
     name: "Leeds Beckett University",
@@ -699,7 +754,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Sport", "Nursing", "Law", "Film"],
     tag: "Affordable",
-    website: "https://www.leedsbeckett.ac.uk"
+    website: "https://www.leedsbeckett.ac.uk",
+    details: "Leeds Beckett University is a dynamic, career-focused university in Leeds known especially for its sport science, business, nursing, law, and film programs. Leeds is one of the UK's fastest-growing and most affordable student cities, with a vibrant cultural scene and a strong graduate job market. The university's industry-facing curriculum and placement year options give international students a competitive edge, while affordable tuition from £12,500 per year keeps costs manageable."
   },
   {
     name: "University of Bradford",
@@ -711,7 +767,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Pharmacy", "Computer Science", "Peace Studies"],
     tag: "Research",
-    website: "https://www.bradford.ac.uk"
+    website: "https://www.bradford.ac.uk",
+    details: "The University of Bradford is a research-active university in Yorkshire uniquely renowned for its Peace Studies department — the only one of its kind in the world — alongside strong engineering, pharmacy, business, and computer science programs. Its Faculty of Engineering & Informatics produces highly skilled graduates sought by the UK's tech and pharmaceutical industries. Bradford offers competitive scholarships up to £4,000, a multicultural city environment, and a strong track record of supporting international students from Muslim-majority countries."
   },
   {
     name: "Manchester Metropolitan University",
@@ -723,7 +780,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Arts", "Law", "Education"],
     tag: "Scholarship",
-    website: "https://www.mmu.ac.uk"
+    website: "https://www.mmu.ac.uk",
+    details: "Manchester Metropolitan University is one of the largest universities in the UK, located in Manchester — one of Europe's most vibrant and affordable student cities. MMU is recognized for its strong business, engineering, arts, law, and education programs and boasts excellent industry links throughout the UK's second-largest economy. Scholarships of up to £3,000 per year and a huge, welcoming international student community make MMU a popular destination for students from Central Asia."
   },
   {
     name: "University of Salford",
@@ -735,7 +793,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Nursing", "Media", "Computer Science"],
     tag: "Technology",
-    website: "https://www.salford.ac.uk"
+    website: "https://www.salford.ac.uk",
+    details: "The University of Salford in Greater Manchester is home to the iconic MediaCityUK campus — the BBC and ITV headquarters — making it the UK's top destination for media, journalism, and broadcasting students. Beyond media, the university excels in engineering, nursing, and computer science with strong industry placements. Affordable tuition, Manchester's student-friendly cost of living, and the MediaCity environment offer an experience unlike any other UK university."
   },
   {
     name: "University of Derby",
@@ -747,7 +806,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Psychology", "Education", "Arts"],
     tag: "Affordable",
-    website: "https://www.derby.ac.uk"
+    website: "https://www.derby.ac.uk",
+    details: "The University of Derby is a modern university in the East Midlands offering strong psychology, business, engineering, education, and arts programs in a supportive, friendly environment. Derby is consistently praised for its student experience and offers one of the most affordable living costs among UK university cities. With good NHS partnerships for health programs and strong industry links in engineering and logistics, Derby graduates enter the job market well prepared."
   },
   {
     name: "University of Greenwich",
@@ -759,7 +819,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Computing", "Architecture", "Health"],
     tag: "Affordable",
-    website: "https://www.gre.ac.uk"
+    website: "https://www.gre.ac.uk",
+    details: "The University of Greenwich is a London university spread across historic buildings in the heart of Greenwich, UNESCO World Heritage Site, with stunning views across the Thames to Canary Wharf. It offers strong programs in engineering, business, computing, architecture, and health, with direct access to London's financial and tech sectors. Greenwich is one of the most affordable London universities, making it an attractive option for Uzbek students who want London on a budget."
   },
   {
     name: "University of Westminster",
@@ -771,7 +832,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Law", "Media", "Architecture", "Computer Science"],
     tag: "Scholarship",
-    website: "https://www.westminster.ac.uk"
+    website: "https://www.westminster.ac.uk",
+    details: "The University of Westminster is a central London university with four campuses in the West End, Regent Street, and Harrow, offering strong programs in business, law, media, architecture, and computer science with unparalleled access to London's global industries. Westminster has one of the most diverse student bodies of any UK university and a strong tradition of international education. Scholarships of up to £4,000 per year and the prestige of a London address make it a very compelling choice for Uzbek students."
   },
   {
     name: "Brunel University London",
@@ -783,7 +845,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Engineering", "Business", "Law", "Computer Science", "Health"],
     tag: "Top Ranked",
-    website: "https://www.brunel.ac.uk"
+    website: "https://www.brunel.ac.uk",
+    details: "Brunel University London is a research-intensive London university with a global reputation in engineering, design, law, and health sciences. Named after the great Victorian engineer Isambard Kingdom Brunel, the university excels in mechanical, electronic, and civil engineering and offers an outstanding placement year programme ensuring near-full graduate employment. With scholarships of up to £6,000 per year and a West London location with excellent transport links, Brunel provides a world-class education with strong career outcomes."
   },
   {
     name: "Kingston University London",
@@ -795,7 +858,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Architecture", "Business", "Law", "Arts", "Computer Science"],
     tag: "Arts",
-    website: "https://www.kingston.ac.uk"
+    website: "https://www.kingston.ac.uk",
+    details: "Kingston University London is a creative and professional university in South West London nationally recognized for its architecture, fashion, fine arts, and design programs — Kingston graduates regularly win major industry awards. Located in Kingston upon Thames, one of London's most pleasant riverside districts, students enjoy a genuine London experience with easy access to the city centre. The university's strong arts and creative industries focus, combined with solid business and law programs, makes it a diverse and stimulating environment."
   },
   {
     name: "University of Roehampton",
@@ -807,7 +871,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Psychology", "Business", "Education", "Sports Science", "Media"],
     tag: "Affordable",
-    website: "https://www.roehampton.ac.uk"
+    website: "https://www.roehampton.ac.uk",
+    details: "The University of Roehampton is a small, campus-based London university set in 54 acres of beautiful parkland in South West London, offering an intimate academic community within easy reach of central London. It is particularly strong in psychology, sports science, education, and media — psychology at Roehampton is among the best in London for student satisfaction. Affordable tuition and a green, peaceful campus environment make Roehampton a uniquely comfortable London university experience."
   },
   {
     name: "University of Bedfordshire",
@@ -819,7 +884,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Computing", "Education", "Nursing", "Media"],
     tag: "Affordable",
-    website: "https://www.beds.ac.uk"
+    website: "https://www.beds.ac.uk",
+    details: "The University of Bedfordshire has campuses in Luton and Bedford, offering some of the lowest tuition fees in the UK alongside solid programs in business, computing, nursing, and media. Luton is just 30 minutes from Central London and home to London Luton Airport, giving students easy access to London and the rest of Europe. With an IELTS requirement of just 5.5 and tuition from £11,500, Bedfordshire is one of the most accessible UK universities for Uzbek students on a budget."
   },
   {
     name: "University of East Anglia",
@@ -831,7 +897,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Law", "Business", "Environmental Science", "Medicine", "Literature"],
     tag: "Research",
-    website: "https://www.uea.ac.uk"
+    website: "https://www.uea.ac.uk",
+    details: "The University of East Anglia is a highly respected research university in Norwich known globally for its creative writing programme — alumni include Nobel and Booker Prize winners — and strong law, environmental science, and medicine programs. UEA's campus is a landmark of Brutalist architecture set around an artificial lake, creating a unique and stimulating environment. Scholarships of up to £5,000 per year and strong research rankings make UEA an excellent choice for academically ambitious students."
   },
   {
     name: "University of Surrey",
@@ -843,7 +910,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Engineering", "Hospitality", "Business", "Computer Science", "Health"],
     tag: "Top Ranked",
-    website: "https://www.surrey.ac.uk"
+    website: "https://www.surrey.ac.uk",
+    details: "The University of Surrey in Guildford is a top-ranked research university nationally celebrated for its hospitality management program — ranked #1 in the UK — along with outstanding engineering, computer science, and health programs. Surrey has a unique Professional Training year built into most degrees, ensuring students gain a full year of paid work experience with leading global companies. Located 30 minutes from London with the highest graduate employment rate in the UK, Surrey is a premium choice for career-focused international students."
   },
   {
     name: "University of Leicester",
@@ -855,7 +923,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Medicine", "Law", "Business", "Space Science", "Psychology"],
     tag: "Research",
-    website: "https://www.le.ac.uk"
+    website: "https://www.le.ac.uk",
+    details: "The University of Leicester is a research-intensive Russell Group-quality university internationally recognised for space science — UK Space Agency has close ties to Leicester — alongside strong medicine, law, business, and psychology programs. Leicester has one of the most ethnically and culturally diverse populations of any UK city, making it an especially welcoming destination for international students from Central Asia. Scholarships of up to £4,000 and research excellence in STEM fields make Leicester a standout UK destination."
   },
   {
     name: "University of Essex",
@@ -867,7 +936,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Economics", "Political Science", "Law", "Computer Science", "Psychology"],
     tag: "Research",
-    website: "https://www.essex.ac.uk"
+    website: "https://www.essex.ac.uk",
+    details: "The University of Essex is a research university in Colchester internationally acclaimed for economics, political science, and data science — its politics and international relations department is consistently ranked in the world's top 50. Essex has a very strong tradition of welcoming students from the former Soviet Union and Central Asia, with active support programmes and a vibrant international student community of over 140 nationalities. Scholarships of up to £4,000 and two intake dates per year add to its appeal."
   },
   {
     name: "Bournemouth University",
@@ -879,7 +949,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Media", "Tourism", "Business", "Computing", "Health"],
     tag: "Arts",
-    website: "https://www.bournemouth.ac.uk"
+    website: "https://www.bournemouth.ac.uk",
+    details: "Bournemouth University on England's sunny south coast is the UK's leading university for media production, animation, and tourism management, with graduates working at the BBC, Sky, and top film studios. Its National Centre for Computer Animation produces graduates who go on to work at Pixar, Disney, and Marvel. BU also has strong business, computing, and health programs, and its location in the seaside resort town of Bournemouth offers a uniquely pleasant student lifestyle."
   },
   {
     name: "Swansea University",
@@ -891,7 +962,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Law", "Medicine", "Computer Science"],
     tag: "Scholarship",
-    website: "https://www.swansea.ac.uk"
+    website: "https://www.swansea.ac.uk",
+    details: "Swansea University is a research university on the beautiful Swansea Bay coastline in Wales, with strong programs in engineering, business, law, medicine, and computer science backed by £450 million of campus investment. Swansea is particularly noted for its engineering and science research with close ties to the aerospace and semiconductor industries in Wales. Scholarships of up to £5,000 per year and a stunning waterfront campus location make Swansea one of Wales' most attractive universities for international students."
   },
   {
     name: "Cardiff Metropolitan University",
@@ -903,7 +975,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Sport", "Business", "Art & Design", "Education", "Health"],
     tag: "Affordable",
-    website: "https://www.cardiffmet.ac.uk"
+    website: "https://www.cardiffmet.ac.uk",
+    details: "Cardiff Metropolitan University in the Welsh capital is highly regarded for sport science, art and design, business, and health programs, with excellent facilities including a Welsh Institute of Sport on campus. Cardiff is one of the UK's most affordable and liveable student cities with a thriving cultural scene, and Cardiff Met provides strong industry connections throughout Wales and the wider UK. Affordable tuition from £13,000 and a welcoming campus atmosphere make it a great choice for Uzbek students."
   },
   {
     name: "University of the West of Scotland",
@@ -915,7 +988,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Computing", "Engineering", "Business", "Nursing", "Law"],
     tag: "Affordable",
-    website: "https://www.uws.ac.uk"
+    website: "https://www.uws.ac.uk",
+    details: "The University of the West of Scotland is a modern university with campuses across Paisley, Ayr, Hamilton, Lanark, and Dumfries, offering highly practical computing, engineering, nursing, business, and law programs at some of Scotland's most affordable tuition rates. UWS has strong partnerships with local businesses and the NHS in Scotland, providing excellent placement opportunities for health and tech students. Scotland's lower living costs and welcoming culture make UWS an excellent choice for budget-conscious international students."
   },
   {
     name: "Edinburgh Napier University",
@@ -927,7 +1001,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Computing", "Engineering", "Nursing", "Tourism"],
     tag: "Technology",
-    website: "https://www.napier.ac.uk"
+    website: "https://www.napier.ac.uk",
+    details: "Edinburgh Napier University is a technology and business-focused university in the beautiful Scottish capital of Edinburgh, one of Europe's most stunning and historically rich cities. It excels in computing, cybersecurity, engineering, nursing, and tourism, and has a strong reputation for producing industry-ready graduates. Edinburgh's thriving financial services, technology, and tourism sectors provide outstanding internship and career opportunities, and Scotland's unique culture and landscapes create an unforgettable student experience."
   },
   {
     name: "Robert Gordon University",
@@ -939,7 +1014,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Oil & Gas Engineering", "Nursing", "Business", "Architecture", "Pharmacy"],
     tag: "Technology",
-    website: "https://www.rgu.ac.uk"
+    website: "https://www.rgu.ac.uk",
+    details: "Robert Gordon University in Aberdeen is uniquely positioned as the world's leading university for oil and gas engineering, serving the North Sea energy industry and attracting students from energy-producing nations worldwide. Beyond energy, RGU offers excellent nursing, architecture, pharmacy, and business programs. Aberdeen's position as Europe's energy capital means RGU graduates in engineering enjoy some of the highest starting salaries of any UK university, making it a highly strategic choice for Uzbek students from the energy sector."
   },
   {
     name: "Glasgow Caledonian University",
@@ -951,7 +1027,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Business", "Nursing", "Engineering", "Computer Science", "Social Work"],
     tag: "Affordable",
-    website: "https://www.gcu.ac.uk"
+    website: "https://www.gcu.ac.uk",
+    details: "Glasgow Caledonian University is a modern, socially conscious university in the heart of Glasgow with strong programs in nursing, business, engineering, and computer science, and a stated mission of supporting students from diverse backgrounds. GCU has a large international student community and is particularly well known for its nursing program, which feeds directly into NHS Scotland. Glasgow is one of the UK's most vibrant and affordable student cities, with a famously warm and welcoming culture that Uzbek students consistently praise."
   },
   {
     name: "Nottingham Trent University",
@@ -963,7 +1040,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Law", "Business", "Fashion", "Architecture", "Computer Science"],
     tag: "Top Ranked",
-    website: "https://www.ntu.ac.uk"
+    website: "https://www.ntu.ac.uk",
+    details: "Nottingham Trent University is one of the UK's most respected modern universities, ranked among the top 10 in the UK by several league tables and celebrated for its outstanding law, fashion, architecture, business, and computer science programs. NTU graduates consistently achieve above-average employment rates and the university's fashion design and law schools regularly produce award-winning graduates. Scholarships of up to £4,000, two intake dates, and the vibrant city of Nottingham make NTU a top-tier UK choice."
   },
 
   // ==================== CANADA (40) ====================
@@ -977,7 +1055,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Business", "Computer Science", "Engineering Technology", "Accounting", "Marketing"],
     tag: "Fast Admissions",
-    website: "https://www.senecapolytechnic.ca"
+    website: "https://www.senecapolytechnic.ca",
+    details: "Seneca Polytechnic is one of Canada's largest and most respected colleges, located in Toronto with multiple campuses across the Greater Toronto Area. Known for fast admissions and three intake dates per year, it offers practical, career-focused programs in business, computer science, engineering technology, accounting, and marketing that lead directly to employment. Seneca graduates are among the most employed in Canada, and its location in Toronto — Canada's business capital — gives students unmatched access to internships and job opportunities."
   },
   {
     name: "Humber College",
@@ -989,7 +1068,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Media", "Engineering Technology", "Health Sciences", "Hospitality"],
     tag: "Affordable",
-    website: "https://www.humber.ca"
+    website: "https://www.humber.ca",
+    details: "Humber College is one of Canada's largest and most comprehensive polytechnic colleges, located in Toronto with strong programs in business, media, engineering technology, health sciences, and hospitality. Humber is internationally recognized for the quality of its creative and media programs, and its tourism and hospitality management diploma is one of the best in Canada. The college has a large, diverse international student community and provides dedicated student services, academic support, and career placement assistance."
   },
   {
     name: "Algonquin College",
@@ -1001,7 +1081,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "IT", "Health Sciences", "Media", "Engineering Technology"],
     tag: "Affordable",
-    website: "https://www.algonquincollege.com"
+    website: "https://www.algonquincollege.com",
+    details: "Algonquin College is located in Ottawa, Canada's capital city, making it unique among Canadian colleges for its proximity to federal government departments, technology firms, and international organizations. The college offers strong IT, business, health sciences, and engineering technology programs with direct pathways to employment in Ottawa's thriving tech and public sector. Ottawa's bilingual French-English environment, affordable living costs, and Algonquin's large international student community make it a welcoming destination for Uzbek students."
   },
   {
     name: "Conestoga College",
@@ -1013,7 +1094,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Engineering Technology", "Business", "IT", "Health Sciences", "Trades"],
     tag: "Technology",
-    website: "https://www.conestogac.on.ca"
+    website: "https://www.conestogac.on.ca",
+    details: "Conestoga College in Kitchener-Waterloo is strategically located in Canada's Silicon Valley — the Waterloo Region is home to Google, Shopify, BlackBerry, and hundreds of tech startups. Conestoga is consistently ranked the #1 college in Ontario for research and has outstanding engineering technology, IT, and business programs with strong co-op placement rates. Three intake dates per year and direct proximity to Canada's tech industry make Conestoga one of the most strategically positioned colleges for Uzbek students interested in technology careers."
   },
   {
     name: "George Brown College",
@@ -1025,7 +1107,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Culinary Arts", "Business", "Health Sciences", "Design", "Computing"],
     tag: "Fast Admissions",
-    website: "https://www.georgebrown.ca"
+    website: "https://www.georgebrown.ca",
+    details: "George Brown College is a downtown Toronto institution located in the waterfront district with outstanding culinary arts, design, health sciences, business, and computing programs. Its School of Chef Training is one of Canada's most celebrated culinary schools, and the college's downtown Toronto location means students are immersed in the city's restaurant, tech, healthcare, and finance sectors. Fast admissions, two Toronto campus locations, and an unbeatable city-centre setting make George Brown a top pick for international students."
   },
   {
     name: "Fanshawe College",
@@ -1037,7 +1120,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Business", "Engineering Technology", "Media", "Social Services", "IT"],
     tag: "Affordable",
-    website: "https://www.fanshawec.ca"
+    website: "https://www.fanshawec.ca",
+    details: "Fanshawe College in London, Ontario offers affordable, hands-on programs in business, engineering technology, media, social services, and IT across three intake dates per year. London is a mid-size university city with a low cost of living, excellent healthcare system, and growing tech and manufacturing job market. Fanshawe has a strong international student services team and a welcoming campus culture that consistently earns high satisfaction ratings from students from Central Asia and beyond."
   },
   {
     name: "Lambton College",
@@ -1049,7 +1133,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Business", "Engineering", "IT", "Fire & Public Safety", "Health"],
     tag: "Affordable",
-    website: "https://www.lambtoncollege.ca"
+    website: "https://www.lambtoncollege.ca",
+    details: "Lambton College in Sarnia, Ontario is known for its unique Fire and Public Safety program — one of very few in Canada — alongside affordable programs in business, engineering, IT, and health. Three intake dates per year and very affordable tuition from CAD $14,000 make Lambton one of the easiest and most budget-friendly entry points into Canadian post-secondary education. The college's strong industry relationships in Sarnia's chemical and petrochemical industry provide excellent co-op opportunities for engineering students."
   },
   {
     name: "Mohawk College",
@@ -1061,7 +1146,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering Technology", "Health Sciences", "IT", "Media"],
     tag: "Affordable",
-    website: "https://www.mohawkcollege.ca"
+    website: "https://www.mohawkcollege.ca",
+    details: "Mohawk College in Hamilton, Ontario is a leading polytechnic college recognized for innovative engineering technology, health sciences, IT, and business programs. Hamilton is a rapidly growing city — often called 'Steeltown' — with a diversifying economy and a close-knit international student community. Mohawk's award-winning International Student Services team provides comprehensive support from pre-arrival to graduation, making the transition to Canadian academic life smooth and successful for Uzbek students."
   },
   {
     name: "Sheridan College",
@@ -1073,7 +1159,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Animation", "Business", "Engineering Technology", "Design", "Computer Science"],
     tag: "Arts",
-    website: "https://www.sheridancollege.ca"
+    website: "https://www.sheridancollege.ca",
+    details: "Sheridan College in Brampton is Canada's leading creative arts and animation college, whose animation and game design graduates work at Pixar, DreamWorks, Warner Bros., and EA Games. Sheridan's School of Animation, Arts & Design is internationally renowned, and the college also offers strong engineering technology, business, and computer science programs. Located in the Greater Toronto Area, students have direct access to Canada's largest job market, making Sheridan a world-class destination for creative and tech-minded international students."
   },
   {
     name: "Centennial College",
@@ -1085,7 +1172,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Engineering Technology", "Business", "Health Sciences", "Aviation", "Media"],
     tag: "Technology",
-    website: "https://www.centennialcollege.ca"
+    website: "https://www.centennialcollege.ca",
+    details: "Centennial College in Toronto is Ontario's first college and has one of Canada's most unique program offerings, including a renowned Aviation — Flight program that trains commercial pilots, along with strong engineering technology, business, health sciences, and media programs. Three intake dates per year, a central Toronto location, and Centennial's commitment to equity and diversity create an outstanding environment for international students. The college has strong employer partnerships throughout the GTA ensuring high graduate employment rates."
   },
   {
     name: "Durham College",
@@ -1097,7 +1185,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "IT", "Engineering", "Nursing", "Culinary"],
     tag: "Affordable",
-    website: "https://www.durhamcollege.ca"
+    website: "https://www.durhamcollege.ca",
+    details: "Durham College in Oshawa is part of the vibrant Durham Region east of Toronto, offering solid programs in business, IT, engineering, nursing, and culinary arts at affordable tuition rates. The college has invested heavily in modern facilities including a state-of-the-art AI Hub, one of the first in Canada, and strong partnerships with General Motors and other Durham Region manufacturers. Its proximity to Toronto gives students access to the GTA job market while enjoying Durham's lower cost of living."
   },
   {
     name: "BCIT (BC Institute of Technology)",
@@ -1109,7 +1198,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Health Sciences", "Computing", "Trades"],
     tag: "Technology",
-    website: "https://www.bcit.ca"
+    website: "https://www.bcit.ca",
+    details: "BCIT (British Columbia Institute of Technology) in Burnaby is Canada's top polytechnic institution and a world leader in applied technology education, consistently producing graduates with the highest employment rates in Canada within six months of graduation. Located in Metro Vancouver, BCIT excels in engineering, computing, business, and health sciences, and its industry-driven curriculum ensures graduates are immediately job-ready. Vancouver's thriving tech scene and BCIT's strong industry partnerships provide exceptional career pathways for international students."
   },
   {
     name: "Langara College",
@@ -1121,7 +1211,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Computing Science", "Health Sciences", "Liberal Arts", "Accounting"],
     tag: "Affordable",
-    website: "https://www.langara.ca"
+    website: "https://www.langara.ca",
+    details: "Langara College is a respected Vancouver institution known as a top transfer pathway college — many students complete two years at Langara before transferring to UBC or SFU for their degree at significantly lower cost. It offers strong programs in business, computing science, health sciences, liberal arts, and accounting in one of the world's most desirable cities. Affordable tuition, Vancouver's multicultural environment, and Langara's proven university transfer record make it a strategically smart choice for Uzbek students planning a Canadian degree."
   },
   {
     name: "Kwantlen Polytechnic University",
@@ -1133,7 +1224,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering Technology", "Horticulture", "Health Sciences", "Design"],
     tag: "Affordable",
-    website: "https://www.kpu.ca"
+    website: "https://www.kpu.ca",
+    details: "Kwantlen Polytechnic University in Surrey, BC is a unique institution offering both degrees and diplomas, with an unusual strength in horticulture and sustainable agriculture alongside strong business, engineering technology, health sciences, and design programs. Located in Metro Vancouver's fastest-growing city, KPU provides an affordable pathway into the Canadian job market with the reputation of a degree-granting institution. International students benefit from KPU's inclusive campus culture and close proximity to Vancouver's tech and business sectors."
   },
   {
     name: "Vancouver Island University",
@@ -1145,7 +1237,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Tourism", "Computer Science", "Education", "Nursing"],
     tag: "Affordable",
-    website: "https://www.viu.ca"
+    website: "https://www.viu.ca",
+    details: "Vancouver Island University in Nanaimo offers a peaceful, small-city campus experience on beautiful Vancouver Island, surrounded by mountains and ocean. VIU has strong programs in business, tourism, computer science, nursing, and education, and its tourism management program benefits directly from the island's thriving eco-tourism and hospitality industry. Affordable tuition, two intake dates, and Vancouver Island's extraordinary natural environment make VIU an appealing choice for Uzbek students who want quality education in a stunning setting."
   },
   {
     name: "Capilano University",
@@ -1157,7 +1250,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Tourism", "Arts", "Music", "Legal Studies"],
     tag: "Arts",
-    website: "https://www.capilanou.ca"
+    website: "https://www.capilanou.ca",
+    details: "Capilano University is a distinctive arts and humanities-focused institution located in North Vancouver with breathtaking views of the Coast Mountains. It is especially known for its music, tourism, visual arts, film, and legal studies programs, and its First Nations Capilano University partnership makes it one of Canada's most culturally unique campuses. The spectacular North Vancouver setting, easy access to downtown Vancouver, and Capilano's creative academic environment offer an exceptional Canadian university experience."
   },
   {
     name: "NAIT (Northern Alberta Institute of Technology)",
@@ -1169,7 +1263,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering Technology", "Business", "Health Sciences", "IT", "Trades"],
     tag: "Technology",
-    website: "https://www.nait.ca"
+    website: "https://www.nait.ca",
+    details: "NAIT (Northern Alberta Institute of Technology) in Edmonton is one of Canada's leading polytechnic institutes, ranked #1 in Alberta for applied research and consistently producing graduates with near-100% employment rates within six months. NAIT excels in engineering technology, IT, business, health sciences, and skilled trades, with strong ties to Alberta's booming energy, construction, and technology industries. Edmonton's strong economy, affordable cost of living, and NAIT's hands-on approach make it a top choice for career-focused Uzbek students."
   },
   {
     name: "SAIT (Southern Alberta Institute of Technology)",
@@ -1181,7 +1276,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering Technology", "Business", "Culinary Arts", "IT", "Health Sciences"],
     tag: "Technology",
-    website: "https://www.sait.ca"
+    website: "https://www.sait.ca",
+    details: "SAIT (Southern Alberta Institute of Technology) in Calgary is a world-class polytechnic renowned for engineering technology, culinary arts, IT, and health sciences, and is consistently ranked among Canada's best colleges for graduate employment. Calgary is one of Canada's most prosperous cities and SAIT's location at its heart means students have access to a booming energy, tech, and finance job market. The culinary arts program at SAIT is among the best in Canada, attracting students passionate about the hospitality industry."
   },
   {
     name: "MacEwan University",
@@ -1193,7 +1289,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Nursing", "Arts", "Education", "Computing Science"],
     tag: "Affordable",
-    website: "https://www.macewan.ca"
+    website: "https://www.macewan.ca",
+    details: "MacEwan University in downtown Edmonton is a liberal arts and professional university offering high-quality undergraduate degrees in business, nursing, arts, education, and computing science at more affordable tuition rates than Alberta's larger universities. MacEwan's small class sizes and personalized academic support create an outstanding learning environment, and its Edmonton location gives students access to Alberta's growing economy. The university has a strong commitment to international student success and a welcoming, inclusive campus culture."
   },
   {
     name: "Mount Royal University",
@@ -1205,7 +1302,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Nursing", "Communication", "Computer Science", "Social Work"],
     tag: "Scholarship",
-    website: "https://www.mtroyal.ca"
+    website: "https://www.mtroyal.ca",
+    details: "Mount Royal University in Calgary offers bachelor's degrees in business, nursing, communication, computer science, and social work in a beautiful campus setting with the Rocky Mountains visible from campus. As a primarily undergraduate university, MRU provides exceptional attention to student success with small class sizes and dedicated faculty. Calgary's dynamic economy in energy, finance, and technology, combined with MRU's scholarship opportunities and strong career services, makes it an excellent launching pad for Uzbek graduates."
   },
   {
     name: "Red River College Polytechnic",
@@ -1217,7 +1315,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering Technology", "IT", "Health Sciences", "Culinary Arts"],
     tag: "Affordable",
-    website: "https://www.rrc.ca"
+    website: "https://www.rrc.ca",
+    details: "Red River College Polytechnic in Winnipeg is Manitoba's leading polytechnic, offering highly practical programs in business, engineering technology, IT, health sciences, and culinary arts at some of Canada's most affordable tuition rates. Winnipeg is a growing city with strong demand for skilled graduates in healthcare, manufacturing, and technology. RRC's industry-connected curriculum and dedicated international student services team provide a smooth transition and strong employment prospects for graduates in Manitoba's job market."
   },
   {
     name: "University of Winnipeg",
@@ -1229,7 +1328,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Arts", "Psychology", "Biology", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.uwinnipeg.ca"
+    website: "https://www.uwinnipeg.ca",
+    details: "The University of Winnipeg is a liberal arts university in the heart of Manitoba's capital, offering affordable degree programs in business, arts, psychology, biology, and computer science. UWinnipeg's downtown location puts students in the middle of Winnipeg's vibrant cultural and commercial centre, and the university's small size creates a close-knit academic community. At tuition from CAD $13,000 per year, UWinnipeg is one of the most affordable Canadian university degree programs for international students."
   },
   {
     name: "Nova Scotia Community College",
@@ -1241,7 +1341,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "IT", "Health Sciences", "Engineering Technology", "Trades"],
     tag: "Affordable",
-    website: "https://www.nscc.ca"
+    website: "https://www.nscc.ca",
+    details: "Nova Scotia Community College is a multi-campus college across the beautiful Atlantic province of Nova Scotia, offering practical programs in business, IT, health sciences, engineering technology, and skilled trades at very affordable tuition starting from CAD $12,500. Halifax is a charming, student-friendly city with a rapidly growing tech sector and strong demand for healthcare and engineering graduates. NSCC's welcoming Atlantic Canadian culture and affordable living costs make it an attractive destination for international students."
   },
   {
     name: "Saint Mary's University",
@@ -1253,7 +1354,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Science", "Arts", "Criminology", "Computing"],
     tag: "Scholarship",
-    website: "https://www.smu.ca"
+    website: "https://www.smu.ca",
+    details: "Saint Mary's University in Halifax is a comprehensive university with a strong reputation in business, science, criminology, and computing, and home to one of Canada's most internationally diverse student bodies. The Sobey School of Business is particularly well regarded in Atlantic Canada and has strong research partnerships. Scholarships of up to CAD $5,000 per year, Halifax's affordable cost of living, and Saint Mary's warm Atlantic Canadian culture make it a highly welcoming destination for Uzbek students."
   },
   {
     name: "Dalhousie University",
@@ -1265,7 +1367,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Law", "Medicine", "Computer Science"],
     tag: "Top Ranked",
-    website: "https://www.dal.ca"
+    website: "https://www.dal.ca",
+    details: "Dalhousie University in Halifax is one of Canada's leading research universities and a founding member of the U15 group of research-intensive universities. It is nationally renowned for its law, medicine, engineering, dentistry, and business programs, and its ocean sciences research is among the best in the world. Dal's large international student community, Halifax's affordable cost of living compared to Toronto or Vancouver, and strong graduate employment outcomes make it a premier choice for ambitious Uzbek students."
   },
   {
     name: "University of New Brunswick",
@@ -1277,7 +1380,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Computer Science", "Law", "Education"],
     tag: "Research",
-    website: "https://www.unb.ca"
+    website: "https://www.unb.ca",
+    details: "The University of New Brunswick is Canada's oldest English-language university, founded in 1785, with a strong reputation in engineering, computer science, business, law, and education. UNB's Faculty of Computer Science is one of Canada's best and has produced many successful tech entrepreneurs and researchers. Fredericton is a safe, affordable, and bilingual Canadian city, and UNB's international student awards help make it financially accessible for Uzbek students seeking a high-quality Canadian university degree."
   },
   {
     name: "Memorial University of Newfoundland",
@@ -1289,7 +1393,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Medicine", "Ocean Sciences", "Education"],
     tag: "Affordable",
-    website: "https://www.mun.ca"
+    website: "https://www.mun.ca",
+    details: "Memorial University of Newfoundland has the lowest international tuition fees of any university in Canada — starting from just CAD $11,000 per year — while offering genuine research university quality in engineering, business, medicine, ocean sciences, and education. MUN is especially world-renowned for ocean and marine research, given Newfoundland's position on the Atlantic. For Uzbek students seeking an accredited Canadian university degree at the absolute lowest possible cost, Memorial University is the most affordable option in the country."
   },
   {
     name: "University of Regina",
@@ -1301,7 +1406,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Engineering", "Education", "Social Work", "Computer Science"],
     tag: "Scholarship",
-    website: "https://www.uregina.ca"
+    website: "https://www.uregina.ca",
+    details: "The University of Regina is a comprehensive university in Saskatchewan offering strong programs in business, engineering, education, social work, and computer science, with particularly well-regarded engineering and fine arts departments. Saskatchewan is one of Canada's most welcoming provinces for new immigrants and international students, and the University of Regina provides generous international entrance scholarships. The province's low cost of living and growing economy in agriculture and energy make it an excellent destination for budget-conscious Uzbek students."
   },
   {
     name: "University of Saskatchewan",
@@ -1313,7 +1419,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Agriculture", "Medicine", "Law", "Business"],
     tag: "Research",
-    website: "https://www.usask.ca"
+    website: "https://www.usask.ca",
+    details: "The University of Saskatchewan in Saskatoon is a founding member of Canada's U15 research universities group, nationally acclaimed for agriculture, veterinary medicine, engineering, law, and medicine. USask is home to the Canadian Light Source — Canada's only synchrotron — and conducts world-leading research in food and bioresources, environment, and health. Saskatoon's welcoming community, affordable living costs, and strong graduate employment in agriculture, mining, and healthcare make USask an outstanding research university for international students."
   },
   {
     name: "Brock University",
@@ -1325,7 +1432,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Education", "Kinesiology", "Computer Science", "Arts"],
     tag: "Scholarship",
-    website: "https://www.brocku.ca"
+    website: "https://www.brocku.ca",
+    details: "Brock University in St. Catharines is uniquely located in Ontario's Niagara region — between Toronto and Niagara Falls — with particularly strong programs in business, kinesiology, education, computer science, and the arts. Brock is especially well known for its kinesiology and sport management programs, and its wine and viticulture program is the only one in Canada, reflecting Niagara's world-class wine country setting. Scholarships of up to CAD $4,000 and the region's growing tourism and agri-food industry create strong career opportunities."
   },
   {
     name: "Wilfrid Laurier University",
@@ -1337,7 +1445,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Music", "Social Work", "Education", "Computer Science"],
     tag: "Business",
-    website: "https://www.wlu.ca"
+    website: "https://www.wlu.ca",
+    details: "Wilfrid Laurier University in Waterloo is nationally renowned for producing Canada's top business graduates — its Lazaridis School of Business & Economics consistently ranks among the best in Canada. Located in the heart of Canada's tech triangle alongside the University of Waterloo and major employers like Google, Shopify, and BlackBerry, Laurier graduates enter an exceptionally strong job market. Strong business and music programs combined with international entrance awards and a vibrant campus community make Laurier a top destination."
   },
   {
     name: "Trent University",
@@ -1349,7 +1458,8 @@ const universitiesData = [
     intakes: "September",
     programs: ["Environmental Science", "Business", "Psychology", "Indigenous Studies", "Computing"],
     tag: "Research",
-    website: "https://www.trentu.ca"
+    website: "https://www.trentu.ca",
+    details: "Trent University in Peterborough is an intimate research university celebrated for its environmental science and sustainability programs — consistently ranked #1 in Canada for environmental studies — alongside strong business, psychology, and indigenous studies offerings. Trent's small size (around 10,000 students) ensures personalized academic mentorship and a genuine community feel. Located among the beautiful Kawartha Lakes region, Trent offers a uniquely peaceful and nature-immersed university experience while maintaining strong research credentials."
   },
   {
     name: "Lakehead University",
@@ -1361,7 +1471,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Engineering", "Business", "Education", "Law", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.lakeheadu.ca"
+    website: "https://www.lakeheadu.ca",
+    details: "Lakehead University in Thunder Bay, Ontario offers a genuine university education with strong programs in engineering, business, education, law, and computer science in a truly unique northern Canadian setting on the shores of Lake Superior. Lakehead has one of Canada's few stand-alone law schools outside major urban centres and a growing medical school. Affordable tuition, a safe welcoming community, and strong connections to the region's mining, forestry, and healthcare sectors make Lakehead an excellent destination for international students."
   },
   {
     name: "Nipissing University",
@@ -1373,7 +1484,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Education", "Business", "Nursing", "Arts", "Computer Science"],
     tag: "Affordable",
-    website: "https://www.nipissingu.ca"
+    website: "https://www.nipissingu.ca",
+    details: "Nipissing University in North Bay, Ontario is best known as one of Canada's top teacher education institutions — its Bachelor of Education program is consistently ranked among the best in the province. The university also offers solid programs in business, nursing, arts, and computer science in a friendly, small-city environment on the shores of Lake Nipissing. Affordable tuition from CAD $21,000 and a very safe, welcoming community make Nipissing an ideal choice for Uzbek students pursuing an education career in Canada."
   },
   {
     name: "University of Prince Edward Island",
@@ -1385,7 +1497,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Veterinary Medicine", "Nursing", "Education", "Arts"],
     tag: "Affordable",
-    website: "https://www.upei.ca"
+    website: "https://www.upei.ca",
+    details: "The University of Prince Edward Island in Charlottetown is a small, comprehensive university with a uniquely distinguished Veterinary College — one of only five in Canada and globally recognized for its programs in animal science and veterinary medicine. UPEI also offers solid business, nursing, education, and arts programs. Prince Edward Island is Canada's smallest and most beautiful province, famous for its red beaches and friendly people. Affordable tuition, low living costs, and a safe island environment make UPEI a special destination."
   },
   {
     name: "Thompson Rivers University",
@@ -1397,7 +1510,8 @@ const universitiesData = [
     intakes: "September, January, May",
     programs: ["Business", "Nursing", "Engineering", "Law", "Education"],
     tag: "Fast Admissions",
-    website: "https://www.tru.ca"
+    website: "https://www.tru.ca",
+    details: "Thompson Rivers University in Kamloops, BC is one of Canada's most international-friendly universities, offering three intake dates per year and a fast, straightforward admissions process. TRU has strong programs in business, nursing, engineering, law, and education in the beautiful interior of British Columbia, surrounded by mountains, rivers, and outdoor recreation. The university's welcoming multicultural campus and BC's post-study work opportunities make TRU a popular and practical choice for Uzbek students."
   },
   {
     name: "University of the Fraser Valley",
@@ -1409,7 +1523,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Computing", "Engineering Technology", "Health Sciences", "Education"],
     tag: "Affordable",
-    website: "https://www.ufv.ca"
+    website: "https://www.ufv.ca",
+    details: "The University of the Fraser Valley in Abbotsford is a growing teaching university in BC's Fraser Valley, just 70 km east of Vancouver, offering degrees in business, computing, engineering technology, health sciences, and education. UFV provides an affordable BC university education with smaller class sizes than larger institutions and a genuine sense of community. The Fraser Valley is one of BC's fastest-growing regions with a booming agricultural, logistics, and tech economy providing strong employment opportunities for graduates."
   },
   {
     name: "Athabasca University",
@@ -1421,7 +1536,8 @@ const universitiesData = [
     intakes: "Open enrollment",
     programs: ["Business", "Computing & Information Systems", "Psychology", "Nursing", "Education"],
     tag: "Fast Admissions",
-    website: "https://www.athabascau.ca"
+    website: "https://www.athabascau.ca",
+    details: "Athabasca University is Canada's leading online and distance university, offering open enrollment with no fixed start dates — students can begin studying almost immediately upon acceptance. This makes it uniquely flexible for Uzbek students who need to start studies quickly or study part-time alongside work. Athabasca offers fully accredited degrees in business, computing, psychology, nursing, and education that are recognized by Canadian employers and immigration authorities."
   },
   {
     name: "Concordia University of Edmonton",
@@ -1433,7 +1549,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Business", "Psychology", "Computing", "Arts", "Biology"],
     tag: "Affordable",
-    website: "https://www.concordia.ab.ca"
+    website: "https://www.concordia.ab.ca",
+    details: "Concordia University of Edmonton is a small, faith-based liberal arts university in Edmonton offering a genuinely personal education in business, psychology, computing, arts, and biology with very small class sizes and close mentorship from faculty. Edmonton is Alberta's capital and one of Canada's fastest-growing cities with a diverse economy in energy, tech, healthcare, and government. Affordable tuition and Concordia's welcoming, values-based community make it an ideal setting for Uzbek students seeking a personalized Canadian university experience."
   },
   {
     name: "Brandon University",
@@ -1445,7 +1562,8 @@ const universitiesData = [
     intakes: "September, January",
     programs: ["Music", "Education", "Business", "Science", "Arts"],
     tag: "Affordable",
-    website: "https://www.brandonu.ca"
+    website: "https://www.brandonu.ca",
+    details: "Brandon University in Brandon, Manitoba is a small comprehensive university best known for one of Canada's finest music conservatories alongside solid programs in education, business, science, and arts. At tuition from CAD $14,000 per year, BU is among the most affordable Canadian universities, and Manitoba's Provincial Nominee Program makes it an attractive destination for Uzbek students planning to immigrate to Canada after graduation. The welcoming small-city environment and strong music and education traditions make Brandon a unique and memorable place to study."
   },
 
   // ==================== AUSTRALIA (40) ====================
@@ -1459,7 +1577,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "Design", "Computer Science", "Architecture"],
     tag: "Top Ranked",
-    website: "https://www.rmit.edu.au"
+    website: "https://www.rmit.edu.au",
+    details: "RMIT University is one of Australia's largest and most globally connected universities, ranked in the world's top 200 institutions, with outstanding programs in engineering, design, computer science, business, and architecture across its vibrant Melbourne city campus. Melbourne, consistently voted the world's most livable city, provides RMIT students with an extraordinary cultural, culinary, and professional environment, and the city's booming technology and creative industries offer excellent internship and graduate employment opportunities. RMIT's global alumni network, strong industry partnerships, and generous scholarships of up to AUD $10,000 make it an exceptional choice for international students from Uzbekistan."
   },
   {
     name: "Griffith University",
@@ -1471,7 +1590,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Law", "Health Sciences", "Environment", "Arts"],
     tag: "Scholarship",
-    website: "https://www.griffith.edu.au"
+    website: "https://www.griffith.edu.au",
+    details: "Griffith University in Brisbane and the Gold Coast is a large research university particularly recognised for its programs in business, law, health sciences, criminology, and environmental management, with campuses located in two of Australia's most exciting and rapidly growing cities. Griffith's Law School is one of Australia's most respected, and its research in environmental science and criminology enjoys an international reputation. Brisbane's subtropical climate, booming economy, and lower cost of living compared to Sydney and Melbourne make Griffith an outstanding choice for international students."
   },
   {
     name: "University of Southern Queensland",
@@ -1483,7 +1603,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "Education", "Nursing", "Computing"],
     tag: "Affordable",
-    website: "https://www.unisq.edu.au"
+    website: "https://www.unisq.edu.au",
+    details: "The University of Southern Queensland in Toowoomba offers affordable Australian university education with strong programs in engineering, computing, business, nursing, and education, and one of the broadest online study options of any Australian university. USQ's affordable tuition, generous scholarships of up to AUD $8,000, and flexible study modes make it an accessible option for international students from Uzbekistan and across Central Asia. The Toowoomba campus is known for its friendly, supportive community and stunning Darling Downs landscape, providing a peaceful and productive environment for study."
   },
   {
     name: "Charles Darwin University",
@@ -1495,7 +1616,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Engineering", "Nursing", "Education", "Law"],
     tag: "Affordable",
-    website: "https://www.cdu.edu.au"
+    website: "https://www.cdu.edu.au",
+    details: "Charles Darwin University in Darwin is Australia's gateway to Asia and the Pacific, offering a unique study environment in the Northern Territory with strong programs in business, engineering, nursing, education, and law. CDU's smaller student body means international students receive highly personalised support, and Darwin's northern lifestyle with tropical weather, vibrant multicultural food scene, and proximity to stunning national parks offers an experience unlike any other Australian city. CDU's affordable tuition and Darwin's growing resources, defence, and tourism industries provide international students with strong employment prospects."
   },
   {
     name: "Federation University Australia",
@@ -1507,7 +1629,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "IT", "Education", "Health Sciences"],
     tag: "Affordable",
-    website: "https://www.federation.edu.au"
+    website: "https://www.federation.edu.au",
+    details: "Federation University in Ballarat, Victoria offers a welcoming, student-focused learning environment with strong programs in engineering, business, information technology, education, and health sciences at some of Australia's most affordable tuition rates. Ballarat is a historic and beautiful regional city just 90 minutes from Melbourne, offering a peaceful study environment with lower living costs and easy access to the capital's professional and cultural opportunities. Federation's dedicated international student support services and its status as one of Australia's most internationally diverse regional universities make it a genuinely welcoming home for students from Uzbekistan."
   },
   {
     name: "Central Queensland University",
@@ -1519,7 +1642,8 @@ const universitiesData = [
     intakes: "February, July, November",
     programs: ["Business", "Engineering", "Nursing", "Education", "IT"],
     tag: "Fast Admissions",
-    website: "https://www.cqu.edu.au"
+    website: "https://www.cqu.edu.au",
+    details: "CQUniversity is Australia's most campus-connected university, with more than 20 locations across Australia including major city campuses in Melbourne, Sydney, and Brisbane, offering flexible program delivery and multiple intakes throughout the year. CQU's accessible entry requirements, three-intake schedule, and affordable tuition make it one of the most practical choices for international students from Uzbekistan who want flexibility in their Australian study pathway. Programs in business, nursing, engineering, and education are the university's strongest offerings, with consistently strong graduate employment outcomes."
   },
   {
     name: "University of the Sunshine Coast",
@@ -1531,7 +1655,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Health Sciences", "Education", "Science", "Arts"],
     tag: "Affordable",
-    website: "https://www.usc.edu.au"
+    website: "https://www.usc.edu.au",
+    details: "The University of the Sunshine Coast in Sippy Downs, Queensland is a young, innovative university with a beautiful sub-tropical campus offering strong programs in business, health sciences, education, and science in one of Australia's fastest-growing regions. USC's Sunshine Coast location, just an hour north of Brisbane and close to world-famous beaches and hinterland, provides an enviable lifestyle for international students seeking sun, sand, and a high-quality education. The university's international merit awards and its personalised approach to student support make it a highly attractive option for students from Uzbekistan."
   },
   {
     name: "James Cook University",
@@ -1543,7 +1668,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Marine Biology", "Business", "Education", "Medicine", "Engineering"],
     tag: "Research",
-    website: "https://www.jcu.edu.au"
+    website: "https://www.jcu.edu.au",
+    details: "James Cook University in Townsville and Cairns is a world-leading research university focused on the tropics, ranked in the global top 200, with internationally recognised expertise in marine biology, tropical medicine, environmental science, and business. JCU's location in tropical North Queensland, adjacent to both the Great Barrier Reef and the Wet Tropics Rainforest, provides unique research opportunities found nowhere else on earth. The university's scholarships, supportive international student community, and Queensland's warm lifestyle and strong employment market make JCU a compelling destination for science-oriented international students."
   },
   {
     name: "Edith Cowan University",
@@ -1555,7 +1681,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Engineering", "Nursing", "Education", "Arts"],
     tag: "Affordable",
-    website: "https://www.ecu.edu.au"
+    website: "https://www.ecu.edu.au",
+    details: "Edith Cowan University in Perth is a student-focused university with strong programs in business, engineering, nursing, education, and creative arts, offering a nurturing learning environment with dedicated international student support in one of Australia's sunniest cities. Perth's extraordinary Mediterranean climate, pristine beaches, and growing mining, technology, and healthcare economy make it an increasingly popular destination for international students. ECU's affordable tuition, generous scholarships, and welcoming campus culture make it one of Western Australia's most accessible and supportive universities."
   },
   {
     name: "Curtin University",
@@ -1567,7 +1694,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "Health Sciences", "Computing", "Architecture"],
     tag: "Top Ranked",
-    website: "https://www.curtin.edu.au"
+    website: "https://www.curtin.edu.au",
+    details: "Curtin University in Perth is one of Australia's top research universities, ranked in the global top 200, with world-class programs in engineering, business, health sciences, architecture, and computing that reflect the needs of Western Australia's resource-rich economy. Curtin's strong industry partnerships with major mining, energy, and technology companies across Perth provide students with excellent co-op placement and graduate employment opportunities. Perth's stunning beaches, affordable living costs compared to Sydney and Melbourne, and Curtin's substantial international scholarships make it a highly attractive destination for ambitious students from Uzbekistan."
   },
   {
     name: "Murdoch University",
@@ -1579,7 +1707,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Veterinary Science", "Business", "Law", "Engineering", "IT"],
     tag: "Scholarship",
-    website: "https://www.murdoch.edu.au"
+    website: "https://www.murdoch.edu.au",
+    details: "Murdoch University in Perth offers a broad range of professionally-focused programs including veterinary science, one of only five veterinary schools in Australia, business, law, engineering, and information technology, within a supportive campus environment. Murdoch's scholarships of up to AUD $8,000 per year and its affordable tuition make it one of the most financially accessible options among research-active Australian universities. Perth's rapidly growing economy, world-class beaches, and culturally vibrant lifestyle provide international students with an outstanding quality of life during their studies."
   },
   {
     name: "University of Notre Dame Australia",
@@ -1591,7 +1720,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Nursing", "Business", "Law", "Education", "Philosophy"],
     tag: "Health",
-    website: "https://www.notredame.edu.au"
+    website: "https://www.notredame.edu.au",
+    details: "The University of Notre Dame Australia is a values-driven Catholic university with campuses in Fremantle, Sydney, and Broome, offering outstanding programs in nursing, business, law, education, and philosophy within a personalised and supportive learning environment. Notre Dame's nursing and health sciences programs are particularly well regarded, with strong clinical placement partnerships across Western Australia's public and private hospital networks. Fremantle's iconic port-city character, with its colourful markets, cafe culture, and stunning ocean beaches, provides a uniquely appealing backdrop for international study."
   },
   {
     name: "University of Tasmania",
@@ -1603,7 +1733,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Marine Science", "Business", "Engineering", "Law", "Education"],
     tag: "Research",
-    website: "https://www.utas.edu.au"
+    website: "https://www.utas.edu.au",
+    details: "The University of Tasmania is Australia's fourth-oldest university, located in the world's most remote temperate wilderness, offering unique research opportunities in marine science, environmental management, and Antarctic studies alongside strong programs in business, law, engineering, and education. UTAS's generous scholarships of up to AUD $10,000 per year, combined with Tasmania's exceptionally low cost of living compared to mainland Australian cities, make it one of the most financially attractive Australian university options. The island state's breathtaking natural landscapes, including Cradle Mountain and Wineglass Bay, provide an unparalleled outdoor lifestyle for international students."
   },
   {
     name: "Charles Sturt University",
@@ -1615,7 +1746,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Agricultural Science", "Business", "Nursing", "IT", "Education"],
     tag: "Affordable",
-    website: "https://www.csu.edu.au"
+    website: "https://www.csu.edu.au",
+    details: "Charles Sturt University is one of Australia's leading regional universities with campuses across New South Wales, Victoria, and the ACT, offering practical programs in agricultural science, business, nursing, information technology, and education tailored to regional Australia's unique needs. CSU's programs in agriculture, viticulture, and food science benefit from the university's unique regional campus locations in prime farming and winemaking regions of Australia. The university's lower cost of living in regional centres, combined with strong online delivery options and practical work placements, make CSU an affordable and career-focused study choice."
   },
   {
     name: "Southern Cross University",
@@ -1627,7 +1759,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Nursing", "Education", "Law", "Environmental Science"],
     tag: "Affordable",
-    website: "https://www.scu.edu.au"
+    website: "https://www.scu.edu.au",
+    details: "Southern Cross University on the beautiful Northern NSW coast offers a distinctive learning experience combining academic excellence with one of Australia's most stunning natural settings, with strong programs in business, nursing, education, law, and environmental science. SCU is particularly known for its programs in complementary medicine, tourism management, and coastal environmental management, reflecting the unique character of the Northern Rivers region. The university's recently opened Gold Coast campus extends its reach to one of Australia's most popular tourist destinations, broadening employment opportunities for international students."
   },
   {
     name: "Western Sydney University",
@@ -1639,7 +1772,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Engineering", "Nursing", "Law", "Education"],
     tag: "Scholarship",
-    website: "https://www.westernsydney.edu.au"
+    website: "https://www.westernsydney.edu.au",
+    details: "Western Sydney University is a large, research-active university serving Australia's most diverse and rapidly growing metropolitan region, with strong programs in business, engineering, nursing, law, and education. WSU's international merit awards, professional placement partnerships, and strong alumni network across Sydney's western suburbs provide excellent career launch opportunities for international graduates. Western Sydney's extraordinary multicultural character, home to communities from across Central Asia, the Middle East, and beyond, creates a naturally welcoming environment for students from Uzbekistan."
   },
   {
     name: "University of Wollongong",
@@ -1651,7 +1785,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "Computer Science", "Law", "Health Sciences"],
     tag: "Top Ranked",
-    website: "https://www.uow.edu.au"
+    website: "https://www.uow.edu.au",
+    details: "The University of Wollongong is a top-ranked research university, consistently placed in the global top 200, with outstanding programs in engineering, business, computer science, law, and health sciences, and a beautiful campus overlooking the South Pacific Ocean just 80km south of Sydney. UOW's Engineering and Information Sciences faculty is one of Australia's strongest, with close links to local industry and exceptional graduate employment outcomes. Wollongong's lower cost of living compared to Sydney, combined with its surfing beaches and close proximity to the city, provide an enviable lifestyle for international students."
   },
   {
     name: "University of Newcastle",
@@ -1663,7 +1798,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "Medicine", "Education", "Architecture"],
     tag: "Research",
-    website: "https://www.newcastle.edu.au"
+    website: "https://www.newcastle.edu.au",
+    details: "The University of Newcastle is a globally engaged research university in Newcastle, NSW, Australia's seventh-largest city, with particular strengths in engineering, medicine, education, architecture, and business, and a growing reputation as a hub for renewable energy research. Newcastle's thriving arts scene, beautiful harbour beaches, and rapidly transforming urban core make it one of Australia's most exciting regional cities, offering a high-quality lifestyle at significantly lower cost than Sydney. UON's generous scholarships, strong professional placement programs, and its membership in the prestigious global Universitas 21 network ensure international students receive world-class education and career support."
   },
   {
     name: "Macquarie University",
@@ -1675,7 +1811,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Law", "Science", "Engineering", "Arts"],
     tag: "Top Ranked",
-    website: "https://www.mq.edu.au"
+    website: "https://www.mq.edu.au",
+    details: "Macquarie University in Sydney is a leading research-intensive institution, ranked in the global top 200, and home to Australia's first PACE program, which embeds real-world work experience into every degree. MQ is particularly well known for business, law, linguistics, and cognitive science, and its proximity to Sydney's North Ryde technology and financial services precinct provides exceptional industry connections. Macquarie's stunning campus with its own train station, lake, and hospital makes it one of the most self-contained and accessible university campuses in Australia."
   },
   {
     name: "University of Technology Sydney",
@@ -1687,7 +1824,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "IT", "Design", "Law"],
     tag: "Technology",
-    website: "https://www.uts.edu.au"
+    website: "https://www.uts.edu.au",
+    details: "UTS is one of Australia's leading universities for graduate employment outcomes, ranked in the global top 200, with outstanding programs in engineering, information technology, business, design, and law that consistently receive the highest possible accreditation. UTS's striking Dr Chau Chak Wing building and its Tech Central campus in Sydney's innovation district reflect the university's commitment to world-class facilities. Sydney's status as Australia's financial and cultural capital, combined with UTS's extraordinary industry partnerships, provide international students with an unmatched platform for career success."
   },
   {
     name: "La Trobe University",
@@ -1699,7 +1837,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Health Sciences", "Business", "Law", "Education", "Engineering"],
     tag: "Health",
-    website: "https://www.latrobe.edu.au"
+    website: "https://www.latrobe.edu.au",
+    details: "La Trobe University is a progressive research university with campuses across Melbourne and regional Victoria, offering strong programs in health sciences, business, law, and education, with a strong commitment to social justice and sustainability. La Trobe's Kingsbury Drive campus is conveniently located just 14km from Melbourne's CBD with excellent public transport connections, and the university's research in biomedical sciences and climate change is internationally recognised. La Trobe's generous scholarships of up to AUD $8,000 and its vibrant multicultural campus community make it a highly welcoming environment for international students from Uzbekistan."
   },
   {
     name: "Swinburne University of Technology",
@@ -1711,7 +1850,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Engineering", "Business", "Design", "IT", "Psychology"],
     tag: "Technology",
-    website: "https://www.swinburne.edu.au"
+    website: "https://www.swinburne.edu.au",
+    details: "Swinburne University of Technology in Melbourne is a dual-sector university particularly known for its excellence in engineering, information technology, design, and business programs, with an innovative approach to industry-integrated learning. Swinburne's Design Factory Melbourne and its strong partnerships with CSIRO, Boeing, and major technology companies provide students with extraordinary hands-on research and project opportunities. Melbourne's status as Australia's sporting and cultural capital, combined with Swinburne's scholarships of up to AUD $8,000, makes it an exceptional destination for internationally ambitious students."
   },
   {
     name: "Victoria University",
@@ -1723,7 +1863,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Engineering", "Law", "Sport", "Health Sciences"],
     tag: "Affordable",
-    website: "https://www.vu.edu.au"
+    website: "https://www.vu.edu.au",
+    details: "Victoria University in Melbourne is a dual-sector university that uniquely offers both TAFE vocational and higher education programs on the same campuses, allowing students to progress seamlessly from diplomas to bachelor's degrees. VU's innovative Block Model, where students study one subject at a time in intensive four-week blocks, has been internationally recognised as a highly effective and supportive learning approach, particularly for students who are new to university. Melbourne's extraordinary livability, multicultural food culture, and thriving sport and arts scene provide international students with a genuinely world-class living experience."
   },
   {
     name: "Deakin University",
@@ -1735,7 +1876,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Health", "Engineering", "Education", "IT"],
     tag: "Scholarship",
-    website: "https://www.deakin.edu.au"
+    website: "https://www.deakin.edu.au",
+    details: "Deakin University is a forward-thinking research university with campuses in Geelong, Melbourne, and Warrnambool, consistently ranked in the global top 250 and known for outstanding programs in business, health, engineering, education, and information technology. Deakin was a pioneer in digital education and its CloudDeakin learning platform provides students with a rich, flexible online learning experience alongside on-campus study. The university's generous scholarships of up to AUD $10,000 and its strong emphasis on student wellbeing and career development make it a top choice for international students across Australia."
   },
   {
     name: "University of South Australia",
@@ -1747,7 +1889,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Engineering", "Health Sciences", "Architecture", "IT"],
     tag: "Top Ranked",
-    website: "https://www.unisa.edu.au"
+    website: "https://www.unisa.edu.au",
+    details: "The University of South Australia is Adelaide's largest university and consistently ranked in the world's top 200 institutions, with particular strengths in business, engineering, health sciences, architecture, and information technology. UniSA's connections with industry, government, and the Adelaide health system ensure graduates have direct pathways to professional employment. Adelaide's reputation as one of Australia's most affordable, safe, and culturally vibrant cities, with world-class food, wine, and festivals, makes UniSA an outstanding choice for international students seeking value and quality."
   },
   {
     name: "Flinders University",
@@ -1759,7 +1902,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Medicine", "Business", "Engineering", "Education", "Law"],
     tag: "Research",
-    website: "https://www.flinders.edu.au"
+    website: "https://www.flinders.edu.au",
+    details: "Flinders University in Adelaide is a research-intensive university ranked in the global top 500, with world-leading programs in medicine, business, engineering, law, and education that benefit from Adelaide's growing healthcare and defence technology industries. Flinders Medical Centre, co-located with the university, provides one of the most integrated medical education and research environments in Australia. Adelaide's relaxed Mediterranean lifestyle, affordable housing, and South Australia's skilled migration programs make Flinders an excellent long-term destination for international students."
   },
   {
     name: "Torrens University Australia",
@@ -1771,7 +1915,8 @@ const universitiesData = [
     intakes: "February, May, July, November",
     programs: ["Business", "Design", "Health", "Hospitality", "IT"],
     tag: "Fast Admissions",
-    website: "https://www.torrens.edu.au"
+    website: "https://www.torrens.edu.au",
+    details: "Torrens University Australia is one of Australia's newest and most innovative private universities, offering flexible study modes and multiple intakes throughout the year in business, design, health, hospitality, and information technology from campuses in Adelaide, Sydney, Melbourne, and Brisbane. Torrens is known for its design and creative programs through its Billy Blue College of Design campus, producing graduates who go on to work for major agencies and design studios across Australia and the world. The university's smaller class sizes, personalised mentoring, and multiple yearly intakes make it an accessible and flexible option for international students."
   },
   {
     name: "Bond University",
@@ -1783,7 +1928,8 @@ const universitiesData = [
     intakes: "January, May, September",
     programs: ["Business", "Law", "Health Sciences", "Film", "Architecture"],
     tag: "Scholarship",
-    website: "https://www.bond.edu.au"
+    website: "https://www.bond.edu.au",
+    details: "Bond University on the Gold Coast is Australia's first private non-profit university, operating on a unique tri-semester calendar that allows students to complete a three-year degree in just two years. Bond's law, business, health science, and film programs are highly regarded, and its beachside Gold Coast campus, surrounded by theme parks, surf beaches, and vibrant entertainment precincts, provides one of the world's most extraordinary university lifestyle experiences. Bond's generous scholarships of up to AUD $15,000 and its accelerated degree completion option make it an exceptionally attractive proposition for motivated international students."
   },
   {
     name: "Australian Catholic University",
@@ -1795,7 +1941,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Nursing", "Education", "Business", "Social Work", "Theology"],
     tag: "Health",
-    website: "https://www.acu.edu.au"
+    website: "https://www.acu.edu.au",
+    details: "Australian Catholic University is a national university with campuses in Sydney, Melbourne, Brisbane, Canberra, Adelaide, and Ballarat, offering strong programs in nursing, education, business, social work, and philosophy within a values-driven, ethical learning environment. ACU's nursing and midwifery programs are among Australia's most respected, with strong clinical placement partnerships across Australia's leading Catholic hospital networks. The university's national footprint gives international students flexibility in campus selection, and ACU's commitment to community engagement provides rich opportunities for students to contribute meaningfully during their studies."
   },
   {
     name: "University of Canberra",
@@ -1807,7 +1954,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Law", "Nursing", "IT", "Design"],
     tag: "Affordable",
-    website: "https://www.canberra.edu.au"
+    website: "https://www.canberra.edu.au",
+    details: "The University of Canberra is located in Australia's capital city, home to major government departments, national museums, research agencies, and defence institutions, offering strong programs in business, law, nursing, information technology, and design with outstanding connections to Canberra's unique public service and policy employment market. UC's location in the ACT gives students access to Australian Government Graduate programs and public sector internships not available at any other Australian university. Canberra's high average incomes, exceptional educational infrastructure, and clean, safe city environment make it an outstanding place for international students to study and work."
   },
   {
     name: "CQUniversity Melbourne",
@@ -1819,7 +1967,8 @@ const universitiesData = [
     intakes: "February, July, November",
     programs: ["Business", "IT", "Engineering", "Community Services", "Education"],
     tag: "Fast Admissions",
-    website: "https://www.cqu.edu.au"
+    website: "https://www.cqu.edu.au",
+    details: "CQUniversity's Melbourne campus offers the full range of CQUniversity programs, including business, IT, engineering, and community services, from the heart of Australia's most livable city, combining CQU's flexible, student-centred approach with Melbourne's extraordinary professional and cultural opportunities. CQU Melbourne's multiple annual intakes and accessible entry requirements make it one of the most convenient starting points for international students transitioning into Australian higher education. Melbourne's world-famous coffee culture, diverse communities, and thriving technology and creative industries provide a stimulating backdrop for study and career development."
   },
   {
     name: "TAFE NSW",
@@ -1831,7 +1980,8 @@ const universitiesData = [
     intakes: "January, July",
     programs: ["Business", "Hospitality", "IT", "Construction", "Health"],
     tag: "Affordable",
-    website: "https://www.tafensw.edu.au"
+    website: "https://www.tafensw.edu.au",
+    details: "TAFE NSW is Australia's largest vocational education and training provider, offering highly practical, employer-aligned programs in business, hospitality, information technology, construction, and health across more than 130 campuses throughout New South Wales. TAFE NSW's qualifications are nationally and internationally recognised and provide direct pathways into employment or further university study in Australia. Sydney's extraordinary harbour, cultural diversity, and world-class job market in hospitality, technology, and construction make TAFE NSW an accessible and career-focused entry point into Australia for international students from Uzbekistan."
   },
   {
     name: "Holmes Institute",
@@ -1843,7 +1993,8 @@ const universitiesData = [
     intakes: "February, May, July, October",
     programs: ["Business", "Accounting", "HR Management", "Marketing", "IT"],
     tag: "Fast Admissions",
-    website: "https://www.holmes.edu.au"
+    website: "https://www.holmes.edu.au",
+    details: "Holmes Institute is a well-established private higher education provider in Melbourne, Sydney, Brisbane, and Cairns, offering practical programs in business, accounting, human resource management, marketing, and information technology with a focus on professional skill development. Holmes is known for its friendly, supportive campus environment, multiple yearly intakes, and accessible IELTS requirements of 5.5, making it one of the most approachable private institutions in Australia for international students. Holmes graduates regularly find employment in Melbourne and Sydney's financial services, accounting, and business management sectors."
   },
   {
     name: "Think Education (Sydney)",
@@ -1855,7 +2006,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Design", "Health", "Education", "IT"],
     tag: "Fast Admissions",
-    website: "https://www.think.edu.au"
+    website: "https://www.think.edu.au",
+    details: "Think Education is a private higher education provider in Sydney and Brisbane offering modern, industry-focused programs in business, design, health, education, and information technology within small, studio-style classroom environments that prioritise collaborative learning. Think's design and business programs have strong connections with Sydney's creative and startup ecosystem, and the provider's central Sydney location gives students immediate access to the city's professional opportunities and networking events. Think's flexible delivery, personalised support, and Sydney's extraordinary harbour city lifestyle make it an attractive option for internationally mobile students."
   },
   {
     name: "Navitas",
@@ -1867,7 +2019,8 @@ const universitiesData = [
     intakes: "Multiple per year",
     programs: ["Business", "Engineering", "IT", "Health", "Sciences"],
     tag: "Fast Admissions",
-    website: "https://www.navitas.com"
+    website: "https://www.navitas.com",
+    details: "Navitas is a global education provider operating university pathway programs and colleges across multiple Australian university campuses, offering an accessible and structured route into Australian university degrees for students who need additional academic preparation or English language development. Navitas colleges in Australia are directly affiliated with partner universities, meaning successful pathway students can progress seamlessly into the second year of their chosen undergraduate degree. Multiple annual intakes at Navitas colleges across Sydney, Melbourne, Perth, Adelaide, and other cities make it one of Australia's most flexible and widely available pathway options for international students."
   },
   {
     name: "University of New England",
@@ -1879,7 +2032,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Agricultural Science", "Law", "Business", "Education", "Psychology"],
     tag: "Research",
-    website: "https://www.une.edu.au"
+    website: "https://www.une.edu.au",
+    details: "The University of New England in Armidale, NSW is one of Australia's leading providers of flexible online and distance education, offering highly regarded programs in agricultural science, law, business, education, and psychology accessible to students anywhere in the world. UNE is home to some of Australia's strongest agricultural and environmental research programs, leveraging the university's unique location in the New England Tablelands. The university's affordable tuition, comprehensive online support, and New England's stunning rural landscapes make UNE an excellent choice for students who value flexible study options."
   },
   {
     name: "Australian National University",
@@ -1891,7 +2045,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Law", "Science", "Engineering", "Business", "Arts"],
     tag: "Top Ranked",
-    website: "https://www.anu.edu.au"
+    website: "https://www.anu.edu.au",
+    details: "The Australian National University in Canberra is Australia's premier research university, consistently ranked in the global top 30 and recognised worldwide for excellence in law, science, engineering, business, and the arts. ANU's unique location in Australia's capital city gives students extraordinary access to federal government agencies, foreign embassies, national research institutions, and international organisations. ANU's prestigious global reputation, world-class academic mentorship, and Canberra's highly educated, professional community make it the most aspirational university destination in Australia for academically outstanding international students."
   },
   {
     name: "Monash University",
@@ -1903,7 +2058,8 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Medicine", "Engineering", "Business", "Law", "Pharmacy"],
     tag: "Top Ranked",
-    website: "https://www.monash.edu"
+    website: "https://www.monash.edu",
+    details: "Monash University is Australia's largest university and a member of the prestigious Group of Eight research universities, ranked in the global top 50 for pharmacy, medicine, engineering, and business programs that consistently produce graduates at the top of Australian salary surveys. Monash's campuses in Clayton, Caulfield, and Parkville, combined with international campuses in Malaysia and South Africa, offer students a genuinely global education experience. Melbourne's extraordinary quality of life and Monash's scholarships of up to AUD $10,000 make it one of the most desirable destinations in the world for ambitious international students from Uzbekistan."
   },
   {
     name: "Queensland University of Technology",
@@ -1915,7 +2071,21 @@ const universitiesData = [
     intakes: "February, July",
     programs: ["Business", "Engineering", "IT", "Design", "Law"],
     tag: "Technology",
-    website: "https://www.qut.edu.au"
+    website: "https://www.qut.edu.au",
+    details: "Queensland University of Technology in Brisbane is Australia's university of the real world, consistently recognised for outstanding graduate employment outcomes, with world-class programs in engineering, business, information technology, design, and law that emphasise industry collaboration and practical project work. QUT's Gardens Point campus overlooking the Brisbane River and its Creative Industries Precinct at Kelvin Grove are among the most inspiring university environments in Australia. Brisbane's subtropical climate, booming infrastructure investment ahead of the 2032 Olympics, and QUT's extensive industry partnerships make it one of Australia's most exciting destinations for international students."
+  },
+  {
+    name: "University of Adelaide",
+    location: "Adelaide, South Australia",
+    country: "Australia",
+    tuition: "AUD $36,000–$44,000 / year",
+    scholarship: "Up to AUD $10,000 / year",
+    ielts: "IELTS 6.0",
+    intakes: "February, July",
+    programs: ["Engineering", "Law", "Medicine", "Business", "Science"],
+    tag: "Top Ranked",
+    website: "https://www.adelaide.edu.au",
+    details: "The University of Adelaide is one of Australia's oldest and most prestigious Group of Eight research universities, ranked in the world's top 100 for multiple disciplines including engineering, law, medicine, and business. Founded in 1874, Adelaide's beautiful sandstone campus is located in the heart of South Australia's capital, a city renowned for its world-class food, wine, arts, and festivals, consistently ranked as one of the world's most livable cities. The university's strong connections to South Australia's wine, defence, and resources industries, combined with generous international scholarships and Adelaide's affordable cost of living, make it an exceptional choice for students from Uzbekistan seeking a top-tier Australian university education."
   },
 ]
 
